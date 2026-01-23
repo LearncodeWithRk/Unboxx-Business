@@ -2,6 +2,7 @@
 
 import { Rss, Bell, Filter, Smartphone } from 'lucide-react';
 import React from 'react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
@@ -39,24 +40,31 @@ export function RealTimeMonitoring() {
           </p>
         </div>
         
-        <div className="flex flex-col gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div key={feature.title} className="relative flex items-start gap-6">
-                {index < features.length - 1 && (
-                  <div className="absolute left-6 top-12 h-full w-px border-l border-dashed border-border/50" />
-                )}
-                <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-background/50 text-primary shadow-lg">
-                  <Icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
-                  <p className="mt-1 text-muted-foreground">{feature.description}</p>
-                </div>
-              </div>
-            );
-          })}
+        <div className="relative">
+            <div className="absolute -inset-16 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05),transparent_65%)]"></div>
+            <Card className="relative rounded-2xl border-border/20 bg-secondary/20 p-8 shadow-lg">
+                <CardContent className="p-0">
+                    <div className="flex flex-col gap-8">
+                    {features.map((feature, index) => {
+                        const Icon = feature.icon;
+                        return (
+                        <div key={feature.title} className="relative flex items-start gap-6">
+                            {index < features.length - 1 && (
+                            <div className="absolute left-6 top-12 h-full w-px border-l border-dashed border-border/50" />
+                            )}
+                            <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-background text-primary shadow-lg">
+                            <Icon className="h-6 w-6" />
+                            </div>
+                            <div>
+                            <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
+                            <p className="mt-1 text-muted-foreground">{feature.description}</p>
+                            </div>
+                        </div>
+                        );
+                    })}
+                    </div>
+                </CardContent>
+            </Card>
         </div>
       </div>
     </section>
