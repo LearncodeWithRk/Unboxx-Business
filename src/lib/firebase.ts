@@ -1,6 +1,6 @@
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getDatabase } from 'firebase/database';
+import { initializeApp, getApps, getApp, type FirebaseApp } from 'firebase/app';
+import { getAuth, type Auth } from 'firebase/auth';
+import { getDatabase, type Database } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -12,13 +12,24 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-if (!firebaseConfig.apiKey || !firebaseConfig.projectId) {
-    throw new Error('Firebase config is not set. Please add your Firebase project credentials to a .env.local file in the root of your project. You can find them in your Firebase project settings.');
+// Conditionally initialize Firebase
+let app: FirebaseApp | null = null;
+let auth: Auth | null = null;
+let db: Database | null = null;
+
+const isFirebaseConfigured = !!firebaseConfig.apiKey && !!firebaseConfig.projectId;
+
+if (isFirebaseConfigured) {
+    try {
+        app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+        auth = getAuth(app);
+        db = getDatabase(app);
+    } catch (e) {
+        console.error("Failed to initialize Firebase.", e);
+    }
+} else {
+    console.warn("Firebase config is not set. Please add your Firebase project credentials to a .env.local file.");
 }
 
-// Initialize Firebase
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getDatabase(app);
 
-export { app, auth, db };
+export { app, auth, db, isFirebaseConfigured };

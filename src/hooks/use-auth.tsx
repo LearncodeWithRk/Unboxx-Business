@@ -3,7 +3,7 @@
 import { useState, useEffect, createContext, useContext, ReactNode } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { ref, onValue, off } from 'firebase/database';
-import { auth, db } from '@/lib/firebase';
+import { auth, db, isFirebaseConfigured } from '@/lib/firebase';
 import type { UserProfile } from '@/lib/types';
 
 interface AuthContextType {
@@ -18,6 +18,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!isFirebaseConfigured || !auth || !db) {
+        setLoading(false);
+        return;
+    }
+    
     const unsubscribe = onAuthStateChanged(auth, (authUser: User | null) => {
       if (authUser) {
         const userRef = ref(db, `users/${authUser.uid}`);

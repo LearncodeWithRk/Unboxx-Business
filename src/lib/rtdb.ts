@@ -1,8 +1,12 @@
 import { ref, set, serverTimestamp } from 'firebase/database';
-import { db } from './firebase';
+import { db, isFirebaseConfigured } from './firebase';
 import type { User } from 'firebase/auth';
 
 export const createUserInDB = (user: User) => {
+  if (!isFirebaseConfigured || !db) {
+    console.warn('Firebase not configured. Skipping user creation in DB.');
+    return Promise.resolve();
+  }
   const userRef = ref(db, `users/${user.uid}`);
   return set(userRef, {
     uid: user.uid,

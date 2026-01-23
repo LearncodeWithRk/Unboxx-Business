@@ -9,7 +9,7 @@ import {
   GoogleAuthProvider,
   updateProfile,
 } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, isFirebaseConfigured } from '@/lib/firebase';
 import { createUserInDB } from '@/lib/rtdb';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -34,6 +34,10 @@ export default function SignUpPage() {
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFirebaseConfigured || !auth) {
+        toast({ variant: 'destructive', title: 'Sign up failed', description: 'Firebase is not configured. Please set environment variables.' });
+        return;
+    }
     setLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -52,6 +56,10 @@ export default function SignUpPage() {
   };
 
   const handleGoogleSignIn = async () => {
+    if (!isFirebaseConfigured || !auth) {
+        toast({ variant: 'destructive', title: 'Google sign up failed', description: 'Firebase is not configured. Please set environment variables.' });
+        return;
+    }
     setLoading(true);
     try {
       const provider = new GoogleAuthProvider();
@@ -134,7 +142,7 @@ export default function SignUpPage() {
                 minLength={6}
               />
             </div>
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full" disabled={loading || !isFirebaseConfigured}>
               {loading ? 'Creating Account...' : 'Create Account'}
             </Button>
           </form>
@@ -148,7 +156,7 @@ export default function SignUpPage() {
                 </span>
               </div>
             </div>
-            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading}>
+            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading || !isFirebaseConfigured}>
                 <GoogleIcon className="mr-2 h-4 w-4" />
                 Sign up with Google
             </Button>

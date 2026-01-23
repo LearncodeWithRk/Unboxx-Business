@@ -11,7 +11,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { signOut } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, isFirebaseConfigured } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/use-auth';
 
@@ -20,6 +20,10 @@ export function UserNav() {
   const router = useRouter();
 
   const handleSignOut = async () => {
+    if (!isFirebaseConfigured || !auth) {
+        router.push('/');
+        return;
+    }
     await signOut(auth);
     router.push('/');
   };

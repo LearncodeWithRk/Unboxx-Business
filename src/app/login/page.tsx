@@ -8,7 +8,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from 'firebase/auth';
-import { auth } from '@/lib/firebase';
+import { auth, isFirebaseConfigured } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -30,6 +30,10 @@ export default function LoginPage() {
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isFirebaseConfigured || !auth) {
+        toast({ variant: 'destructive', title: 'Sign in failed', description: 'Firebase is not configured. Please set environment variables.' });
+        return;
+    }
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -46,6 +50,10 @@ export default function LoginPage() {
   };
 
   const handleGoogleSignIn = async () => {
+    if (!isFirebaseConfigured || !auth) {
+        toast({ variant: 'destructive', title: 'Google sign in failed', description: 'Firebase is not configured. Please set environment variables.' });
+        return;
+    }
     setLoading(true);
     try {
       const provider = new GoogleAuthProvider();
@@ -115,7 +123,7 @@ export default function LoginPage() {
                 required
               />
             </div>
-            <Button type="submit" className="w-full" disabled={loading}>
+            <Button type="submit" className="w-full" disabled={loading || !isFirebaseConfigured}>
               {loading ? 'Signing In...' : 'Sign In'}
             </Button>
           </form>
@@ -129,7 +137,7 @@ export default function LoginPage() {
                 </span>
               </div>
             </div>
-            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading}>
+            <Button variant="outline" className="w-full" onClick={handleGoogleSignIn} disabled={loading || !isFirebaseConfigured}>
                 <GoogleIcon className="mr-2 h-4 w-4" />
                 Sign in with Google
             </Button>
