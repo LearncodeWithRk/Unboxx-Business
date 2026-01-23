@@ -9,7 +9,7 @@ const footerLinks = {
     { name: 'Security', href: '#' },
   ],
   solutions: [
-    { name: 'For Universities', href: '#' },
+    { name: 'For Universities', href: '/solutions' },
     { name: 'Admissions & Enrollment', href: '#' },
     { name: 'Student Experience', href: '#' },
     { name: 'Multi-campus Operations', href: '#' },
