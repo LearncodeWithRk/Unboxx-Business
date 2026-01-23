@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function FooterCTA() {
   return (
@@ -15,7 +16,9 @@ export function FooterCTA() {
             Unboxx Business evolves based on client feedback. We add features, integrations, and capabilities driven by the universities we serve. If you're looking for a partner who understands higher education and builds with your input, we'd love to work with you.
           </p>
           <div className="mt-10">
-            <Button size="lg">Book a demo</Button>
+            <Button size="lg" asChild>
+              <Link href="/contact#book-a-demo">Book a demo</Link>
+            </Button>
           </div>
         </div>
       </div>

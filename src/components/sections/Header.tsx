@@ -77,7 +77,9 @@ export function Header() {
              ) : (
                 null
              )}
-             <Button>Book a demo</Button>
+             <Button asChild>
+              <Link href="/contact#book-a-demo">Book a demo</Link>
+             </Button>
            </div>
           <div className="flex items-center md:hidden">
             <Button
@@ -121,7 +123,9 @@ export function Header() {
                ) : (
                   null
                )}
-               <Button className="w-full">Book a demo</Button>
+               <Button className="w-full" asChild>
+                <Link href="/contact#book-a-demo" onClick={() => setMobileMenuOpen(false)}>Book a demo</Link>
+               </Button>
             </div>
           </div>
         </div>

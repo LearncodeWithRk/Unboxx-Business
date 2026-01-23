@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ReviewOrbitAnimation } from './ReviewOrbitAnimation';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -16,9 +17,11 @@ export function Hero() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-              <Button size="lg">Book a demo</Button>
-              <Button size="lg" variant="secondary">
-                See how it works
+              <Button size="lg" asChild>
+                <Link href="/contact#book-a-demo">Book a demo</Link>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/product">See how it works</Link>
               </Button>
             </div>
 

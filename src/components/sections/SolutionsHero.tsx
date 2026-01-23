@@ -2,6 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { JourneyAnimation } from './JourneyAnimation';
+import Link from 'next/link';
 
 export function SolutionsHero() {
   return (
@@ -18,9 +19,11 @@ export function SolutionsHero() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-              <Button size="lg">Book a demo</Button>
-              <Button size="lg" variant="secondary">
-                See the product
+              <Button size="lg" asChild>
+                <Link href="/contact#book-a-demo">Book a demo</Link>
+              </Button>
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/product">See the product</Link>
               </Button>
             </div>
 

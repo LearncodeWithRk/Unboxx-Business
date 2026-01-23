@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 export function PricingHero() {
@@ -50,11 +51,12 @@ export function PricingHero() {
             <Button
               size="lg"
               className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105"
+              asChild
             >
-              Get a quote
+              <Link href="/contact#book-a-demo">Get a quote</Link>
             </Button>
-            <Button size="lg" variant="outline">
-              Book a demo
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/contact#book-a-demo">Book a demo</Link>
             </Button>
           </div>
 

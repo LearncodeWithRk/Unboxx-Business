@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Check, Globe } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 // Re-using the same SVG logo from Header/Footer
 const UnboxxLogo = () => (
@@ -97,7 +98,9 @@ export function PremiumCTA() {
           className="mt-10 opacity-0 animate-fade-in-up" 
           style={{ animationDelay: '0.8s' }}
         >
-          <Button size="lg" className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105">Book a demo</Button>
+          <Button size="lg" className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105" asChild>
+            <Link href="/contact#book-a-demo">Book a demo</Link>
+          </Button>
         </div>
 
         {/* Trust Indicators */}

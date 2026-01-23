@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Check, Star } from 'lucide-react';
 import React from 'react';
 import { ReviewFunnelAnimation } from './ReviewFunnelAnimation';
+import Link from 'next/link';
 
 export function ProductHero() {
   return (
@@ -31,9 +32,11 @@ export function ProductHero() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-              <Button size="lg" className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105">Book a demo</Button>
-              <Button size="lg" variant="outline">
-                View pricing
+              <Button size="lg" className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105" asChild>
+                <Link href="/contact#book-a-demo">Book a demo</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/pricing">View pricing</Link>
               </Button>
             </div>
 

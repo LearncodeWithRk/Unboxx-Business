@@ -119,7 +119,7 @@ export function ContactFormAndDetails() {
         </div>
 
         {/* Right Column: Form */}
-        <Card className="bg-secondary/20 border-border/20 shadow-lg">
+        <Card id="book-a-demo" className="bg-secondary/20 border-border/20 shadow-lg">
           <CardHeader>
             <CardTitle className="text-3xl">Book your demo</CardTitle>
             <CardDescription>We'll confirm your demo time via email within 1 business day.</CardDescription>

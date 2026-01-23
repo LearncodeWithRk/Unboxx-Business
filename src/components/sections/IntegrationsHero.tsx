@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 export function IntegrationsHero() {
@@ -50,11 +51,12 @@ export function IntegrationsHero() {
             <Button
               size="lg"
               className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105"
+              asChild
             >
-              Book a demo
+              <Link href="/contact#book-a-demo">Book a demo</Link>
             </Button>
-            <Button size="lg" variant="outline">
-              See the product
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/product">See the product</Link>
             </Button>
           </div>
 
