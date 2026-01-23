@@ -61,7 +61,7 @@ export function HowItWorks() {
             {features.map((feature) => {
               const image = PlaceHolderImages.find(p => p.id === feature.imageId);
               return (
-                <div key={feature.title} className="flex flex-col gap-6 rounded-xl border border-border/20 bg-background/50 p-6 shadow-lg transition-all hover:border-primary/30 hover:shadow-primary/10">
+                <div key={feature.title} className="flex flex-col gap-6 rounded-xl border border-border/20 bg-background/50 p-6 shadow-lg transition-all hover:border-primary/30 hover:shadow-primary/10 hover:-translate-y-2">
                   <div className="aspect-video overflow-hidden rounded-lg border border-border/30 bg-muted/30">
                     {image ? (
                       <Image
