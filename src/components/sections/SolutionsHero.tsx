@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/ui/button';
 import { Briefcase, Settings, Smile, Users, ArrowRight } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Link from 'next/link';
 
 const stakeholders = [
@@ -54,33 +53,28 @@ export function SolutionsHero() {
           </div>
         </div>
 
-        <div className="relative mt-20 sm:mt-24">
-           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
+        <div className="relative mt-20 sm:mt-24 max-w-3xl mx-auto">
+           <div className="space-y-8">
               {stakeholders.map((stakeholder) => {
                 const Icon = stakeholder.icon;
                 return (
-                  <Link href={stakeholder.link} key={stakeholder.title} className="group">
-                    <Card className="relative h-full overflow-hidden rounded-2xl border-border/20 bg-background/50 p-2 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:-translate-y-1">
-                      <CardHeader>
-                        <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-background/80 text-primary transition-colors group-hover:bg-primary/10">
-                          <Icon className="h-6 w-6" />
+                  <Link href={stakeholder.link} key={stakeholder.title} className="group block">
+                    <div className="flex items-center gap-6">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-border bg-background/80 text-primary transition-colors group-hover:bg-primary/10">
+                            <Icon className="h-6 w-6" />
                         </div>
-                      </CardHeader>
-                      <CardContent>
-                        <h3 className="text-lg font-semibold text-foreground">{stakeholder.title}</h3>
-                        <p className="mt-2 text-sm text-muted-foreground">{stakeholder.description}</p>
-                        <div className="mt-4 flex items-center text-sm font-semibold text-primary">
-                          Learn more
-                          <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <div className="flex-1">
+                            <h3 className="text-lg font-semibold text-foreground">{stakeholder.title}</h3>
+                            <p className="mt-1 text-sm text-muted-foreground">{stakeholder.description}</p>
                         </div>
-                      </CardContent>
-                    </Card>
+                        <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
+                    </div>
                   </Link>
                 );
               })}
            </div>
         </div>
-         <div className="mt-16 text-center">
+         <div className="mt-20 text-center">
               <p className="text-sm text-muted-foreground">
                 Serving premium universities across India and globally
               </p>
