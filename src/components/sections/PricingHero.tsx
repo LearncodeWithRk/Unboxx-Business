@@ -7,7 +7,7 @@ import React from 'react';
 
 export function PricingHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#02040c] py-20 sm:py-28 lg:py-32">
+    <section className="relative w-full overflow-hidden bg-[#02040c] py-10 sm:py-14 lg:py-16">
       {/* Grid Pattern */}
       <div
         className="absolute inset-0 z-0 opacity-20"
