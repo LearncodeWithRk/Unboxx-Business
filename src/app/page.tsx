@@ -7,6 +7,7 @@ import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { TheChallenge } from '@/components/sections/TheChallenge';
 import { PremiumCTA } from '@/components/sections/PremiumCTA';
+import { SocialProof } from '@/components/sections/SocialProof';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <HowItWorks />
       <BuiltForUniversities />
       <FromFeedbackToAction />
+      <SocialProof />
       <FAQs />
       <PremiumCTA />
       <Footer />
