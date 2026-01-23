@@ -7,7 +7,12 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const faqs = [
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+const defaultFaqs: FAQ[] = [
   {
     question: 'Can we customize response templates?',
     answer:
@@ -35,7 +40,11 @@ const faqs = [
   },
 ];
 
-export function FAQs() {
+interface FAQsProps {
+  faqs?: FAQ[];
+}
+
+export function FAQs({ faqs = defaultFaqs }: FAQsProps) {
   return (
     <section className="bg-background py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
