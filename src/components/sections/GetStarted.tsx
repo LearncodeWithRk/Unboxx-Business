@@ -1,11 +1,11 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Check, Users, Headset, Star, BadgePercent, TrendingUp } from 'lucide-react';
+import { Check, Network, Headset, Star, BadgePercent, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const stats = [
-  { value: '7000+', label: 'Brands thriving with us', icon: Users },
+  { value: '7000+', label: 'Brands thriving with us', icon: Network },
   { value: '24/7', label: 'Exceptional support', icon: Headset },
   { value: '4.9/5', label: 'Avg. rating by our users', icon: Star },
   { value: '64%', label: 'Savings in ad spend', icon: BadgePercent },
