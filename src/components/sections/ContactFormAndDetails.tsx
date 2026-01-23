@@ -317,7 +317,7 @@ export function ContactFormAndDetails() {
             </Form>
              <p className="mt-6 text-center text-xs text-muted-foreground">
                 We never share your information. See our{' '}
-                <Link href="#" className="underline hover:text-primary">
+                <Link href="/privacy" className="underline hover:text-primary">
                     Privacy Policy
                 </Link>.
             </p>
