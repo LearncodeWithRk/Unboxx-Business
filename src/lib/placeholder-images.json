@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-graphic",
+      "description": "Abstract graphic with floating social media and tech logos in a circular pattern on a dark background.",
+      "imageUrl": "https://storage.googleapis.com/aifirebase-799b3.appspot.com/refold/black-hole.png",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "hero-avatar",
+      "description": "Avatar of a woman with blonde hair.",
+      "imageUrl": "https://images.unsplash.com/photo-1610655507808-a59293f4e332?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTA5MjI1NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    }
+  ]
 }
