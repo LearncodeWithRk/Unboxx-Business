@@ -4,6 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Menu, X } from 'lucide-react';
+import { useAuth } from '@/hooks/use-auth';
+import { UserNav } from '@/components/auth/UserNav';
+import { Skeleton } from '../ui/skeleton';
 
 const navItems = [
   { name: 'Product', href: '/product', hasDropdown: true },
@@ -16,6 +19,7 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { user, loading } = useAuth();
 
   return (
     <header className="bg-background/95 sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur">
@@ -60,7 +64,15 @@ export function Header() {
 
         <div className="flex items-center gap-2">
            <div className="hidden items-center gap-2 md:flex">
-             <Button variant="ghost">Sign in</Button>
+             {loading ? (
+                <Skeleton className="h-10 w-24" />
+             ) : user ? (
+                <UserNav />
+             ) : (
+                <Button variant="ghost" asChild>
+                    <Link href="/login">Sign in</Link>
+                </Button>
+             )}
              <Button>Book a demo</Button>
            </div>
           <div className="flex items-center md:hidden">
@@ -87,6 +99,7 @@ export function Header() {
                   key={item.name}
                   href={item.href}
                   className="flex items-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="ml-auto h-4 w-4" />}
@@ -94,7 +107,18 @@ export function Header() {
               ))}
             </nav>
             <div className="flex flex-col gap-2 border-t border-border pt-4">
-               <Button variant="outline" className="w-full">Sign in</Button>
+               {loading ? (
+                  <Skeleton className="h-10 w-full" />
+               ) : user ? (
+                  <>
+                    <p className="text-center text-sm font-medium">{user.displayName}</p>
+                    <Button variant="outline" className="w-full" onClick={() => { auth.signOut(); setMobileMenuOpen(false); }}>Sign out</Button>
+                  </>
+               ) : (
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link href="/login" onClick={() => setMobileMenuOpen(false)}>Sign in</Link>
+                  </Button>
+               )}
                <Button className="w-full">Book a demo</Button>
             </div>
           </div>
