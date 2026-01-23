@@ -9,7 +9,7 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-2 lg:py-24">
           <div className="flex flex-col items-center gap-y-8 text-center md:items-start md:text-left">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Review management built for premium universities
+              Turn reviews into revenue
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
               Monitor every review. Route to the right team. Respond with brand consistency. Built for multi-campus institutions that take reputation seriously.
