@@ -2,20 +2,25 @@ import Link from 'next/link';
 
 const footerLinks = {
   product: [
+    { name: 'How it works', href: '#' },
     { name: 'Features', href: '#' },
-    { name: 'Pricing', href: '#' },
     { name: 'Integrations', href: '#' },
     { name: 'Security', href: '#' },
   ],
-  resources: [
-    { name: 'Blog', href: '#' },
-    { name: 'Case Studies', href: '#' },
-    { name: 'Documentation', href: '#' },
+  solutions: [
+    { name: 'For Universities', href: '#' },
+    { name: 'Admissions & Enrollment', href: '#' },
+    { name: 'Student Experience', href: '#' },
+    { name: 'Multi-campus Operations', href: '#' },
+  ],
+  company: [
+    { name: 'About', href: '#' },
+    { name: 'Contact', href: '#' },
+    { name: 'Pricing', href: '#' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' },
-    { name: 'Compliance', href: '#' },
   ],
 };
 
@@ -23,7 +28,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/20 bg-background">
       <div className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2">
               <svg
@@ -47,9 +52,6 @@ export function Footer() {
                 Unboxx Business
               </span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Complete review governance for premium universities.
-            </p>
           </div>
 
           <div>
@@ -69,9 +71,9 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-sm font-semibold text-foreground">Resources</h3>
+            <h3 className="text-sm font-semibold text-foreground">Solutions</h3>
             <ul className="mt-4 space-y-2">
-              {footerLinks.resources.map((link) => (
+              {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -84,6 +86,22 @@ export function Footer() {
             </ul>
           </div>
 
+          <div>
+            <h3 className="text-sm font-semibold text-foreground">Company</h3>
+            <ul className="mt-4 space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
           <div>
             <h3 className="text-sm font-semibold text-foreground">Legal</h3>
             <ul className="mt-4 space-y-2">
@@ -101,7 +119,8 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-16 border-t border-border/20 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2026 Unboxx Business. All rights reserved.</p>
+          <p>Unboxx Business supports compliance-aware review management. Not legal advice.</p>
+          <p>&copy; 2026 Unboxx Business. India + Global.</p>
         </div>
       </div>
     </footer>
