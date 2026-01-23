@@ -1,15 +1,15 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, Users, Headset, Star, BadgePercent, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const stats = [
-  { value: '7000+', label: 'Brands thriving with us' },
-  { value: '24/7', label: 'Exceptional support' },
-  { value: '4.9/5', label: 'Avg. rating by our users' },
-  { value: '64%', label: 'Savings in ad spend' },
-  { value: '3x', label: 'Revenue from ads' },
+  { value: '7000+', label: 'Brands thriving with us', icon: Users },
+  { value: '24/7', label: 'Exceptional support', icon: Headset },
+  { value: '4.9/5', label: 'Avg. rating by our users', icon: Star },
+  { value: '64%', label: 'Savings in ad spend', icon: BadgePercent },
+  { value: '3x', label: 'Revenue from ads', icon: TrendingUp },
 ];
 
 const features = [
@@ -89,12 +89,18 @@ export function GetStarted() {
         </div>
 
         <div className="mt-24 grid grid-cols-2 gap-8 text-center md:grid-cols-5">
-          {stats.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center">
-              <p className="text-4xl font-bold tracking-tight text-foreground">{stat.value}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
-            </div>
-          ))}
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="flex flex-col items-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-background/80 text-primary mb-4">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <p className="text-4xl font-bold tracking-tight text-foreground">{stat.value}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
