@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, Star } from 'lucide-react';
 import React from 'react';
-import { ReviewOrbitAnimation } from './ReviewOrbitAnimation';
+import { ReviewFunnelAnimation } from './ReviewFunnelAnimation';
 
 export function ProductHero() {
   return (
@@ -53,7 +53,7 @@ export function ProductHero() {
             </div>
           </div>
           <div className="relative flex h-full min-h-[400px] w-full items-center justify-center lg:min-h-[500px]">
-            <ReviewOrbitAnimation />
+            <ReviewFunnelAnimation />
           </div>
       </div>
     </section>

@@ -137,6 +137,24 @@ export default {
           '75%': { opacity: '1' },
           '100%': { transform: 'translateY(150%)', opacity: '0' },
         },
+        'funnel-drop': {
+          '0%': {
+            transform: 'translateY(-20px) scale(1)',
+            opacity: '0',
+          },
+          '10%': {
+            transform: 'translateY(0px) scale(1)',
+            opacity: '1',
+          },
+          '90%': {
+            transform: 'translateY(240px) scale(0.2)',
+            opacity: '1',
+          },
+          '100%': {
+            transform: 'translateY(260px) scale(0)',
+            opacity: '0',
+          }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -151,6 +169,7 @@ export default {
         'beam-sweep': 'beam-sweep 90s linear infinite',
         'light-sweep': 'light-sweep 7s ease-in-out infinite',
         'beam-scroll': 'beam-scroll 4s ease-in-out infinite',
+        'funnel-drop': 'funnel-drop 10s ease-in-out infinite',
       },
     },
   },
