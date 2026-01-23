@@ -126,6 +126,11 @@ export default {
           '0%': { transform: 'rotate(0deg) scale(1.5)' },
           '100%': { transform: 'rotate(360deg) scale(1.5)' },
         },
+        'light-sweep': {
+          '0%': { transform: 'translateY(-150%)' },
+          '50%': { transform: 'translateY(150%)' },
+          '100%': { transform: 'translateY(-150%)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -138,6 +143,7 @@ export default {
         'premium-pulse': 'premium-pulse 5s infinite ease-in-out',
         'premium-float': 'premium-float 15s infinite ease-in-out',
         'beam-sweep': 'beam-sweep 90s linear infinite',
+        'light-sweep': 'light-sweep 7s ease-in-out infinite',
       },
     },
   },
