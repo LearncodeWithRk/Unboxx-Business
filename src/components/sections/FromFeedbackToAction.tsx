@@ -14,7 +14,7 @@ export function FromFeedbackToAction() {
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 sm:px-6 lg:grid-cols-2 lg:gap-24 lg:px-8">
         <div className="relative order-last lg:order-first">
           <div className="absolute -inset-8 rounded-3xl bg-primary/10 blur-2xl"></div>
-          <Card className="relative overflow-hidden rounded-2xl border-border/20 bg-background/70 backdrop-blur-lg">
+          <Card className="group relative overflow-hidden rounded-2xl border border-border/20 bg-background/50 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:-translate-y-1 backdrop-blur-lg">
             <CardContent className="p-0">
               {dashboardImage && (
                 <Image
