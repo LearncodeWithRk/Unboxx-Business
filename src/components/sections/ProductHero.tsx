@@ -4,66 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Check, Star } from 'lucide-react';
 import React from 'react';
-
-const UnboxxLogo = () => (
-  <svg
-    width="64"
-    height="64"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="32" height="32" rx="8" className="fill-primary" />
-    <path
-      d="M8 18L12 14L16 18L20 14L24 18"
-      stroke="hsl(var(--primary-foreground))"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
-
-const FloatingVisual = () => {
-    return (
-        <div className="relative w-full h-full flex items-center justify-center">
-            {/* Ambient shadow */}
-            <div className="absolute bottom-[25%] w-64 h-8 rounded-[50%] bg-black/50 blur-2xl" />
-
-            {/* Floating Capsule Container */}
-            <div 
-                className="relative w-56 h-80 animate-premium-float"
-                style={{ animationDuration: '12s' }}
-            >
-                {/* Glass Capsule Shape */}
-                <div className="relative w-full h-full rounded-[99px] border-2 border-white/10 bg-white/5 backdrop-blur-md overflow-hidden">
-                    
-                    {/* Internal Light Beams */}
-                    <div className="absolute top-0 left-1/4 w-1/2 h-full">
-                        <div className="absolute w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '0s'}}/>
-                        <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '1.5s'}}/>
-                        <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '0.5s'}}/>
-                    </div>
-                    
-                    {/* Floating icon inside */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div 
-                            className="relative animate-pulse-glow"
-                            style={{ animationDuration: '5s' }}
-                        >
-                            <UnboxxLogo />
-                        </div>
-                    </div>
-                    
-                    {/* Reflection/Sheen */}
-                     <div className="absolute top-0 left-0 w-[150%] h-[150%] bg-gradient-to-br from-white/10 via-transparent to-transparent -translate-x-1/2 -translate-y-1/2 rotate-45" />
-
-                </div>
-            </div>
-        </div>
-    );
-};
-
+import { ReviewOrbitAnimation } from './ReviewOrbitAnimation';
 
 export function ProductHero() {
   return (
@@ -112,7 +53,7 @@ export function ProductHero() {
             </div>
           </div>
           <div className="relative flex h-full min-h-[400px] w-full items-center justify-center lg:min-h-[500px]">
-            <FloatingVisual />
+            <ReviewOrbitAnimation />
           </div>
       </div>
     </section>
