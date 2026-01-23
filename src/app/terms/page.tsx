@@ -1,12 +1,13 @@
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
+import { TermsOfService } from '@/components/sections/TermsOfService';
 
 export default function TermsPage() {
   return (
     <>
       <Header />
       <main>
-        {/* Components will be added here later */}
+        <TermsOfService />
       </main>
       <Footer />
     </>
