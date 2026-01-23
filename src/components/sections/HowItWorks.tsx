@@ -1,38 +1,55 @@
-import Image from 'next/image';
+'use client';
+
+import {
+  ArrowRight,
+  LayoutDashboard,
+  GitMerge,
+  ShieldCheck,
+  Smile,
+  TriangleAlert,
+  FileText,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { cn } from '@/lib/utils';
+import React from 'react';
 
 const features = [
   {
+    icon: LayoutDashboard,
     title: 'Unified Dashboard',
     description: 'Monitor Google Business Profile and leading review platforms in one dashboard.',
-    imageId: 'how-it-works-dashboard',
+    className: 'lg:col-span-2 lg:row-span-2',
+    background: <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />,
   },
   {
+    icon: GitMerge,
     title: 'Automated Routing',
     description: 'Route reviews automatically to the right campus or department.',
-    imageId: 'how-it-works-routing',
+    className: 'lg:col-span-1',
   },
   {
+    icon: ShieldCheck,
     title: 'Response Governance',
     description: 'Approve responses before publication with templates and tone guidance.',
-    imageId: 'how-it-works-approval',
+    className: 'lg:col-span-1',
   },
   {
+    icon: Smile,
     title: 'Sentiment Analysis',
     description: 'Surface sentiment trends and recurring themes across programs and locations.',
-    imageId: 'how-it-works-sentiment',
+    className: 'lg:col-span-1',
   },
   {
+    icon: TriangleAlert,
     title: 'Issue Escalation',
     description: 'Escalate issues to resolution workflows before they impact enrollment.',
-    imageId: 'how-it-works-escalation',
+    className: 'lg:col-span-1',
   },
   {
+    icon: FileText,
     title: 'Executive Reporting',
     description: 'Report outcomes to leadership with executive dashboards.',
-    imageId: 'how-it-works-reporting',
+    className: 'lg:col-span-1',
   },
 ];
 
@@ -55,31 +72,27 @@ export function HowItWorks() {
           </div>
         </div>
 
-        <div className="relative mt-16">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
-          <div className="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mt-20">
+           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
+          <div className="relative grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-3">
             {features.map((feature) => {
-              const image = PlaceHolderImages.find(p => p.id === feature.imageId);
+              const Icon = feature.icon;
               return (
-                <div key={feature.title} className="flex flex-col gap-6 rounded-xl border border-border/20 bg-background/50 p-6 shadow-lg transition-all hover:border-primary/30 hover:shadow-primary/10 hover:-translate-y-2">
-                  <div className="aspect-video overflow-hidden rounded-lg border border-border/30 bg-muted/30">
-                    {image ? (
-                      <Image
-                        src={image.imageUrl}
-                        alt={feature.title}
-                        width={600}
-                        height={400}
-                        className="h-full w-full object-cover"
-                        data-ai-hint={image.imageHint}
-                      />
-                    ) : (
-                        <div className="h-full w-full bg-muted"></div>
-                    )}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
+                <div
+                  key={feature.title}
+                  className={cn(
+                    'group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border/20 bg-background/50 p-6 shadow-lg transition-all duration-300 hover:border-primary/50 hover:shadow-primary/20 hover:-translate-y-1',
+                    feature.className
+                  )}
+                >
+                  <div className="relative z-10 flex flex-col">
+                     <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-border bg-background/80 text-primary">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                    <h3 className="mt-6 text-lg font-semibold text-foreground">{feature.title}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{feature.description}</p>
                   </div>
+                   {feature.background}
                 </div>
               );
             })}
