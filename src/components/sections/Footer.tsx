@@ -5,7 +5,7 @@ const footerLinks = {
     { name: 'Product', href: '/product' },
     { name: 'How it works', href: '#' },
     { name: 'Features', href: '#' },
-    { name: 'Integrations', href: '#' },
+    { name: 'Integrations', href: '/integrations' },
     { name: 'Security', href: '#' },
   ],
   solutions: [
@@ -15,9 +15,9 @@ const footerLinks = {
     { name: 'Multi-campus Operations', href: '#' },
   ],
   company: [
-    { name: 'About', href: '#' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '#' },
-    { name: 'Pricing', href: '#' },
+    { name: 'Pricing', href: '/pricing' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '#' },
