@@ -3,6 +3,7 @@ import { Footer } from '@/components/sections/Footer';
 import { IntegrationsHero } from '@/components/sections/IntegrationsHero';
 import { ReviewPlatformIntegrations } from '@/components/sections/ReviewPlatformIntegrations';
 import { UniversitySystemIntegrations } from '@/components/sections/UniversitySystemIntegrations';
+import { ApiAndDataAccess } from '@/components/sections/ApiAndDataAccess';
 
 export default function IntegrationsPage() {
   return (
@@ -12,7 +13,7 @@ export default function IntegrationsPage() {
         <IntegrationsHero />
         <ReviewPlatformIntegrations />
         <UniversitySystemIntegrations />
-        {/* You can continue adding your integration components here. */}
+        <ApiAndDataAccess />
       </main>
       <Footer />
     </>
