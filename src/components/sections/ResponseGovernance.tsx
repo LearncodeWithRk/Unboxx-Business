@@ -10,13 +10,29 @@ import {
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 
 export function ResponseGovernance() {
   const features = [
-    { icon: FileText, className: 'top-0 left-1/2 -translate-x-1/2 -translate-y-3/4' },
-    { icon: UserCheck, className: 'right-0 top-1/2 -translate-y-1/2 translate-x-3/4' },
-    { icon: History, className: 'bottom-0 left-1/2 -translate-x-1/2 translate-y-3/4' },
+    {
+      icon: FileText,
+      title: 'Response templates',
+      description: 'For common scenarios (positive, neutral, negative)',
+    },
+    {
+      icon: UserCheck,
+      title: 'Approval workflows',
+      description: 'Multi-level approval workflows before publication',
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Compliance checks',
+      description: 'Tone and compliance checks to protect student privacy',
+    },
+    {
+      icon: History,
+      title: 'Audit logs',
+      description: 'Version history and audit logs for every response',
+    },
   ];
 
   return (
@@ -40,26 +56,24 @@ export function ResponseGovernance() {
           </div>
         </div>
 
-        <div className="relative flex h-80 w-full items-center justify-center">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05),transparent_65%)]"></div>
-            
-            <div className="absolute h-px w-full max-w-xs bg-border/50"></div>
-            <div className="absolute h-full max-h-xs w-px bg-border/50"></div>
-            
-            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-background border border-border">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/20">
-                    <ShieldCheck className="h-8 w-8 text-primary" />
+        <div className="flex flex-col gap-8">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={feature.title} className="relative flex items-start gap-6">
+                {index < features.length - 1 && (
+                  <div className="absolute left-6 top-12 h-full w-px border-l border-dashed border-border/50" />
+                )}
+                <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-primary/30 bg-background/50 text-primary shadow-lg">
+                  <Icon className="h-6 w-6" />
                 </div>
-            </div>
-
-            {features.map((dest, index) => {
-                const Icon = dest.icon;
-                return (
-                    <div key={index} className={cn("absolute flex h-14 w-14 items-center justify-center rounded-full bg-background border border-border", dest.className)}>
-                       <Icon className="h-6 w-6 text-muted-foreground" />
-                    </div>
-                );
-            })}
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">{feature.title}</h3>
+                  <p className="mt-1 text-muted-foreground">{feature.description}</p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
