@@ -68,7 +68,7 @@ export function FAQs({ faqs = defaultFaqs }: FAQsProps) {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="rounded-lg border-border/20 bg-secondary/20 px-6 transition-all hover:bg-secondary/30"
+              className="rounded-lg border bg-secondary px-6 transition-all hover:bg-secondary/80"
             >
               <AccordionTrigger className="py-5 text-left font-medium text-foreground hover:no-underline">
                 {faq.question}
