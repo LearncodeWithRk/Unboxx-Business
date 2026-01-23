@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { useAuth } from '@/hooks/use-auth';
 import { UserNav } from '@/components/auth/UserNav';
 import { Skeleton } from '../ui/skeleton';
+import { auth } from '@/lib/firebase';
 
 const navItems = [
   { name: 'Product', href: '/product', hasDropdown: false },
@@ -69,9 +70,7 @@ export function Header() {
              ) : user ? (
                 <UserNav />
              ) : (
-                <Button variant="ghost" asChild>
-                    <Link href="/login">Sign in</Link>
-                </Button>
+                null
              )}
              <Button>Book a demo</Button>
            </div>
@@ -112,12 +111,10 @@ export function Header() {
                ) : user ? (
                   <>
                     <p className="text-center text-sm font-medium">{user.displayName}</p>
-                    <Button variant="outline" className="w-full" onClick={() => { auth.signOut(); setMobileMenuOpen(false); }}>Sign out</Button>
+                    <Button variant="outline" className="w-full" onClick={() => { auth?.signOut(); setMobileMenuOpen(false); }}>Sign out</Button>
                   </>
                ) : (
-                  <Button variant="outline" className="w-full" asChild>
-                    <Link href="/login" onClick={() => setMobileMenuOpen(false)}>Sign in</Link>
-                  </Button>
+                  null
                )}
                <Button className="w-full">Book a demo</Button>
             </div>
