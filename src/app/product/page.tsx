@@ -6,6 +6,8 @@ import { AutomaticRouting } from '@/components/sections/AutomaticRouting';
 import { ResponseGovernance } from '@/components/sections/ResponseGovernance';
 import { AnalyzeSentiment } from '@/components/sections/AnalyzeSentiment';
 import { EscalateAndResolve } from '@/components/sections/EscalateAndResolve';
+import { ReportToLeadership } from '@/components/sections/ReportToLeadership';
+import { FooterCTA } from '@/components/sections/FooterCTA';
 
 export default function ProductPage() {
   return (
@@ -18,6 +20,8 @@ export default function ProductPage() {
         <ResponseGovernance />
         <AnalyzeSentiment />
         <EscalateAndResolve />
+        <ReportToLeadership />
+        <FooterCTA />
       </main>
       <Footer />
     </>
