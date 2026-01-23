@@ -9,11 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const reportFeatures = [
     {
         icon: LayoutGrid,
-        text: 'Executive summary dashboards',
+        text: 'Executive summary dashboards with ratings, volume, and sentiment',
     },
     {
         icon: Users,
-        text: 'Department and campus scorecards',
+        text: 'Department and campus scorecards for accountability',
     },
     {
         icon: BarChart,
@@ -21,7 +21,7 @@ const reportFeatures = [
     },
     {
         icon: FileDown,
-        text: 'Exportable reports for planning',
+        text: 'Exportable reports for board meetings and strategic planning',
     },
 ];
 
