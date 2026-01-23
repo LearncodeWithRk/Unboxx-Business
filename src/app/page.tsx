@@ -1,4 +1,5 @@
 import { BuiltForUniversities } from '@/components/sections/BuiltForUniversities';
+import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
@@ -12,6 +13,7 @@ export default function Home() {
       <TheChallenge />
       <HowItWorks />
       <BuiltForUniversities />
+      <FromFeedbackToAction />
     </>
   );
 }
