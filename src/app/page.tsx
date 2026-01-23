@@ -7,6 +7,7 @@ import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { KeyOutcomes } from '@/components/sections/KeyOutcomes';
 import { TheChallenge } from '@/components/sections/TheChallenge';
+import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <FromFeedbackToAction />
       <KeyOutcomes />
       <FAQs />
+      <FinalCTA />
       <Footer />
     </>
   );
