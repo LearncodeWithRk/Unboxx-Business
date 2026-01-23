@@ -9,34 +9,29 @@ import {
 
 const faqs = [
   {
-    question: 'What review platforms does Unboxx Business monitor?',
+    question: 'Can we customize response templates?',
     answer:
-      'Google Business Profile, Facebook, leading education review sites, and other platforms where prospective students research universities. We add new sources based on client needs.',
+      'Yes. You can create unlimited templates, customize them by campus or department, and set approval requirements for each template type.',
   },
   {
-    question: 'How do you handle student privacy in responses?',
+    question: 'How does sentiment analysis work?',
     answer:
-      'Our platform guides teams to never confirm student identity, move sensitive topics offline, and follow privacy-safe response protocols aligned with FERPA, GDPR, and DPDP principles.',
+      'Our system uses natural language processing to score sentiment (positive, neutral, negative) and extract common themes like "campus facilities," "faculty quality," or "career support."',
   },
   {
-    question: 'Can we manage reviews across multiple countries?',
+    question: 'Can we respond directly from the platform?',
     answer:
-      'Yes. Unboxx Business supports multi-region operations with time zone awareness, language support, and compliance considerations for India, EU, UK, US, and other markets.',
+      'Yes. Draft, edit, and publish responses without leaving Unboxx Business. All responses sync back to the original review platform.',
   },
   {
-    question: 'Do you buy or incentivize reviews?',
+    question: 'What happens if someone posts false information?',
     answer:
-      'No. We do not support review gating, purchasing reviews, or policy-violating incentive practices. Our platform is built for ethical reputation management only.',
+      'You can flag reviews for escalation, respond publicly with factual corrections, and follow platform-specific reporting procedures for policy violations.',
   },
   {
-    question: 'How quickly can we get started?',
+    question: 'Do you train our team on the platform?',
     answer:
-      'Most universities are live within 2–4 weeks depending on campus count and integration requirements. We handle setup, training, and ongoing support.',
-  },
-  {
-    question: "What if we don't have resources to respond to every review?",
-    answer:
-      'We offer optional managed services where our team drafts responses for your approval, following your brand voice and governance requirements.',
+      'Yes. We provide onboarding training, documentation, and ongoing support for all users.',
   },
 ];
 
