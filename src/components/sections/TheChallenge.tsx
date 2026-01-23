@@ -7,8 +7,7 @@ export function TheChallenge() {
             Your reputation is fragmented across campuses, platforms, and departments
           </h2>
           <p className="max-w-3xl text-lg text-muted-foreground">
-            Reviews come from everywhere, responses lack consistency, and
-            leadership has no single view. Unboxx Business centralizes it all.
+            Prospective students read reviews before they visit. Parents compare feedback across your locations. But reviews arrive on Google, education sites, and social platforms—scattered across departments with no central view. Responses vary by tone. Issues slip through. Leadership has no dashboard. Unboxx Business solves this.
           </p>
         </div>
       </div>
