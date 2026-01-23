@@ -32,6 +32,13 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+
+    /* Brand colors */
+    --brand-primary: #14213d;
+    --brand-accent: #fca311;
+    --brand-bg: #ffffff;
+    --brand-fg: #000000;
+    --brand-border: #e5e5e5;
   }
 }
 
