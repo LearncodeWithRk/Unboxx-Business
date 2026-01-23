@@ -10,7 +10,7 @@ import { Skeleton } from '../ui/skeleton';
 
 const navItems = [
   { name: 'Product', href: '/product', hasDropdown: false },
-  { name: 'Solutions', href: '/solutions', hasDropdown: true },
+  { name: 'Solutions', href: '/solutions', hasDropdown: false },
   { name: 'Integrations', href: '#', hasDropdown: false },
   { name: 'Security', href: '#', hasDropdown: false },
   { name: 'Pricing', href: '#', hasDropdown: false },
