@@ -3,6 +3,7 @@ import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
+import { KeyOutcomes } from '@/components/sections/KeyOutcomes';
 import { TheChallenge } from '@/components/sections/TheChallenge';
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <HowItWorks />
       <BuiltForUniversities />
       <FromFeedbackToAction />
+      <KeyOutcomes />
     </>
   );
 }
