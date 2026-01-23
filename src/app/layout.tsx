@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/hooks/use-auth';
 import { Toaster } from '@/components/ui/toaster';
+import { BackToTopButton } from '@/components/ui/back-to-top-button';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -28,6 +29,7 @@ export default function RootLayout({
           </main>
           <Toaster />
         </AuthProvider>
+        <BackToTopButton />
       </body>
     </html>
   );
