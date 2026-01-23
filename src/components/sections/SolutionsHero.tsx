@@ -1,84 +1,38 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Briefcase, Settings, Smile, Users, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-
-const stakeholders = [
-  {
-    icon: Users,
-    title: 'Admissions & Enrollment',
-    description: 'Convert more applicants by managing reputation at scale.',
-    link: '#',
-  },
-  {
-    icon: Smile,
-    title: 'Student Experience',
-    description: 'Use feedback to improve campus life, services, and outcomes.',
-    link: '#',
-  },
-  {
-    icon: Settings,
-    title: 'Multi-Campus Operations',
-    description: 'Centralize governance, reporting, and workflows across locations.',
-    link: '#',
-  },
-  {
-    icon: Briefcase,
-    title: 'Leadership & Strategy',
-    description: 'Get executive insights to protect brand health and drive growth.',
-    link: '#',
-  },
-];
-
+import { StakeholderOrbitAnimation } from './StakeholderOrbitAnimation';
 
 export function SolutionsHero() {
   return (
-    <section className="relative w-full overflow-hidden bg-background py-20 sm:py-28 lg:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
-      
-      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Solutions for every stakeholder
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Whether you're in admissions, student experience, operations, or leadership—Unboxx Business gives you the tools to manage reputation, improve outcomes, and protect your institution's brand.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-4">
-            <Button size="lg">Book a demo</Button>
-            <Button size="lg" variant="secondary">
-              See the product
-            </Button>
-          </div>
-        </div>
+    <section className="relative w-full overflow-hidden bg-background">
+      <div className="container relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 py-20 md:grid-cols-2 lg:py-28">
+          <div className="flex flex-col items-center gap-y-8 text-center md:items-start md:text-left">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              Solutions for every stakeholder
+            </h1>
+            <p className="max-w-2xl text-lg text-muted-foreground">
+              Whether you&apos;re in admissions, student experience, operations, or leadership—Unboxx Business gives you the tools to manage reputation, improve outcomes, and protect your institution&apos;s brand.
+            </p>
 
-        <div className="relative mt-20 sm:mt-24 max-w-3xl mx-auto">
-           <div className="space-y-8">
-              {stakeholders.map((stakeholder) => {
-                const Icon = stakeholder.icon;
-                return (
-                  <Link href={stakeholder.link} key={stakeholder.title} className="group block">
-                    <div className="flex items-center gap-6">
-                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg border border-border bg-background/80 text-primary transition-colors group-hover:bg-primary/10">
-                            <Icon className="h-6 w-6" />
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="text-lg font-semibold text-foreground">{stakeholder.title}</h3>
-                            <p className="mt-1 text-sm text-muted-foreground">{stakeholder.description}</p>
-                        </div>
-                        <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1 group-hover:text-primary" />
-                    </div>
-                  </Link>
-                );
-              })}
-           </div>
-        </div>
-         <div className="mt-20 text-center">
+            <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+              <Button size="lg">Book a demo</Button>
+              <Button size="lg" variant="secondary">
+                See the product
+              </Button>
+            </div>
+
+            <div className="pt-4">
               <p className="text-sm text-muted-foreground">
                 Serving premium universities across India and globally
               </p>
             </div>
+          </div>
+          <div className="relative flex h-full min-h-[400px] w-full items-center justify-center lg:min-h-[500px]">
+            <StakeholderOrbitAnimation />
+          </div>
+        </div>
       </div>
     </section>
   );
