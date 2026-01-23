@@ -5,9 +5,7 @@ import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
-import { KeyOutcomes } from '@/components/sections/KeyOutcomes';
 import { TheChallenge } from '@/components/sections/TheChallenge';
-import { FinalCTA } from '@/components/sections/FinalCTA';
 
 export default function Home() {
   return (
@@ -18,9 +16,7 @@ export default function Home() {
       <HowItWorks />
       <BuiltForUniversities />
       <FromFeedbackToAction />
-      <KeyOutcomes />
       <FAQs />
-      <FinalCTA />
       <Footer />
     </>
   );
