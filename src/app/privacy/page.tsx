@@ -1,12 +1,13 @@
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
+import { PrivacyPolicy } from '@/components/sections/PrivacyPolicy';
 
 export default function PrivacyPage() {
   return (
     <>
       <Header />
       <main>
-        {/* Components will be added here one by one */}
+        <PrivacyPolicy />
       </main>
       <Footer />
     </>
