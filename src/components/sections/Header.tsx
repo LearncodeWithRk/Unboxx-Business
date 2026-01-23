@@ -12,7 +12,7 @@ import { auth } from '@/lib/firebase';
 const navItems = [
   { name: 'Product', href: '/product', hasDropdown: false },
   { name: 'Solutions', href: '/solutions', hasDropdown: false },
-  { name: 'Integrations', href: '#', hasDropdown: false },
+  { name: 'Integrations', href: '/integrations', hasDropdown: false },
   { name: 'Pricing', href: '#', hasDropdown: false },
 ];
 
