@@ -3,6 +3,7 @@ import { Footer } from '@/components/sections/Footer';
 import { PremiumCTA } from '@/components/sections/PremiumCTA';
 import { SolutionsHero } from '@/components/sections/SolutionsHero';
 import { AdmissionsEnrollment } from '@/components/sections/AdmissionsEnrollment';
+import { StudentExperience } from '@/components/sections/StudentExperience';
 
 export default function SolutionsPage() {
   return (
@@ -11,6 +12,7 @@ export default function SolutionsPage() {
       <main>
         <SolutionsHero />
         <AdmissionsEnrollment />
+        <StudentExperience />
       </main>
       <PremiumCTA />
       <Footer />
