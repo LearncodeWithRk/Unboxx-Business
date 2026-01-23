@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 import { ChevronDown, Menu, X } from 'lucide-react';
 
 const navItems = [
-  { name: 'Product', hasDropdown: true },
-  { name: 'Solutions', hasDropdown: true },
-  { name: 'Integrations', hasDropdown: false },
-  { name: 'Security', hasDropdown: false },
-  { name: 'Pricing', hasDropdown: false },
-  { name: 'About', hasDropdown: false },
+  { name: 'Product', href: '/product', hasDropdown: true },
+  { name: 'Solutions', href: '#', hasDropdown: true },
+  { name: 'Integrations', href: '#', hasDropdown: false },
+  { name: 'Security', href: '#', hasDropdown: false },
+  { name: 'Pricing', href: '#', hasDropdown: false },
+  { name: 'About', href: '#', hasDropdown: false },
 ];
 
 export function Header() {
@@ -49,7 +49,7 @@ export function Header() {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              href="#"
+              href={item.href}
               className="flex items-center text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.name}
@@ -85,7 +85,7 @@ export function Header() {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  href="#"
+                  href={item.href}
                   className="flex items-center rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
                 >
                   {item.name}
