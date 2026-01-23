@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Star } from 'lucide-react';
+import { Star, Network } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { cn } from '@/lib/utils';
@@ -132,10 +132,7 @@ export function ReviewOrbitAnimation() {
         {/* Central Core */}
         <div className="relative z-10 flex h-24 w-24 flex-col items-center justify-center rounded-full bg-primary/10 backdrop-blur-sm border border-primary/30">
             <div className="animate-pulse-glow h-16 w-16 rounded-full bg-primary/80 shadow-2xl shadow-primary/50 flex items-center justify-center">
-               <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="32" height="32" rx="8" className="fill-primary-foreground" />
-                     <path d="M8 18L12 14L16 18L20 14L24 18" stroke="#050505" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+               <Network className="h-8 w-8 text-primary-foreground" />
             </div>
              <p className="absolute -bottom-7 text-xs text-center font-semibold text-foreground whitespace-nowrap">Unified Review Manager</p>
         </div>
