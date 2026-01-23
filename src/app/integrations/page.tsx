@@ -2,6 +2,7 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { IntegrationsHero } from '@/components/sections/IntegrationsHero';
 import { ReviewPlatformIntegrations } from '@/components/sections/ReviewPlatformIntegrations';
+import { UniversitySystemIntegrations } from '@/components/sections/UniversitySystemIntegrations';
 
 export default function IntegrationsPage() {
   return (
@@ -10,7 +11,8 @@ export default function IntegrationsPage() {
       <main>
         <IntegrationsHero />
         <ReviewPlatformIntegrations />
-        {/* You can start adding your integration components here. */}
+        <UniversitySystemIntegrations />
+        {/* You can continue adding your integration components here. */}
       </main>
       <Footer />
     </>
