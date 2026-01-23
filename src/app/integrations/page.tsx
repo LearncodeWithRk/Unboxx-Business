@@ -4,6 +4,7 @@ import { IntegrationsHero } from '@/components/sections/IntegrationsHero';
 import { ReviewPlatformIntegrations } from '@/components/sections/ReviewPlatformIntegrations';
 import { UniversitySystemIntegrations } from '@/components/sections/UniversitySystemIntegrations';
 import { ApiAndDataAccess } from '@/components/sections/ApiAndDataAccess';
+import { SecurityAndCompliance } from '@/components/sections/SecurityAndCompliance';
 
 export default function IntegrationsPage() {
   return (
@@ -14,6 +15,7 @@ export default function IntegrationsPage() {
         <ReviewPlatformIntegrations />
         <UniversitySystemIntegrations />
         <ApiAndDataAccess />
+        <SecurityAndCompliance />
       </main>
       <Footer />
     </>
