@@ -9,6 +9,7 @@ import { EscalateAndResolve } from '@/components/sections/EscalateAndResolve';
 import { ReportToLeadership } from '@/components/sections/ReportToLeadership';
 import { ManagedServices } from '@/components/sections/ManagedServices';
 import { FAQs } from '@/components/sections/FAQs';
+import { PremiumCTA } from '@/components/sections/PremiumCTA';
 
 export default function ProductPage() {
   return (
@@ -23,8 +24,9 @@ export default function ProductPage() {
         <EscalateAndResolve />
         <ReportToLeadership />
         <ManagedServices />
-        <FAQs />
       </main>
+      <FAQs />
+      <PremiumCTA />
       <Footer />
     </>
   );
