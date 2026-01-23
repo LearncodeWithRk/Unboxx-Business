@@ -7,6 +7,7 @@ import { ResponseGovernance } from '@/components/sections/ResponseGovernance';
 import { AnalyzeSentiment } from '@/components/sections/AnalyzeSentiment';
 import { EscalateAndResolve } from '@/components/sections/EscalateAndResolve';
 import { ReportToLeadership } from '@/components/sections/ReportToLeadership';
+import { ManagedServices } from '@/components/sections/ManagedServices';
 
 export default function ProductPage() {
   return (
@@ -20,6 +21,7 @@ export default function ProductPage() {
         <AnalyzeSentiment />
         <EscalateAndResolve />
         <ReportToLeadership />
+        <ManagedServices />
       </main>
       <Footer />
     </>
