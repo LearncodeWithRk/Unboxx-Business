@@ -5,6 +5,7 @@ import { RealTimeMonitoring } from '@/components/sections/RealTimeMonitoring';
 import { AutomaticRouting } from '@/components/sections/AutomaticRouting';
 import { ResponseGovernance } from '@/components/sections/ResponseGovernance';
 import { AnalyzeSentiment } from '@/components/sections/AnalyzeSentiment';
+import { EscalateAndResolve } from '@/components/sections/EscalateAndResolve';
 
 export default function ProductPage() {
   return (
@@ -16,6 +17,7 @@ export default function ProductPage() {
         <AutomaticRouting />
         <ResponseGovernance />
         <AnalyzeSentiment />
+        <EscalateAndResolve />
       </main>
       <Footer />
     </>
