@@ -1,6 +1,7 @@
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { ContactHero } from '@/components/sections/ContactHero';
+import { ContactFormAndDetails } from '@/components/sections/ContactFormAndDetails';
 
 export default function ContactPage() {
   return (
@@ -8,7 +9,7 @@ export default function ContactPage() {
       <Header />
       <main>
         <ContactHero />
-        {/* Components will be added here */}
+        <ContactFormAndDetails />
       </main>
       <Footer />
     </>
