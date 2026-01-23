@@ -2,7 +2,6 @@ import { BuiltForUniversities } from '@/components/sections/BuiltForUniversities
 import { FAQs } from '@/components/sections/FAQs';
 import { Footer } from '@/components/sections/Footer';
 import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction';
-import { GetStarted } from '@/components/sections/GetStarted';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
@@ -20,7 +19,6 @@ export default function Home() {
       <FromFeedbackToAction />
       <KeyOutcomes />
       <FAQs />
-      <GetStarted />
       <Footer />
     </>
   );
