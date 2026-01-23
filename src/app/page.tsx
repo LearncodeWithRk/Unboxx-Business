@@ -6,7 +6,7 @@ import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { TheChallenge } from '@/components/sections/TheChallenge';
-import { FooterCTA } from '@/components/sections/FooterCTA';
+import { PremiumCTA } from '@/components/sections/PremiumCTA';
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       <BuiltForUniversities />
       <FromFeedbackToAction />
       <FAQs />
-      <FooterCTA />
+      <PremiumCTA />
       <Footer />
     </>
   );

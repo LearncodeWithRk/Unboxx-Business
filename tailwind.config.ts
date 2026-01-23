@@ -103,6 +103,29 @@ export default {
           'from': { opacity: '0', transform: 'translateY(20px)' },
           'to': { opacity: '1', transform: 'translateY(0px)' },
         },
+        'fade-in-up': {
+          'from': { opacity: '0', transform: 'translateY(20px)' },
+          'to': { opacity: '1', transform: 'translateY(0px)' },
+        },
+        'premium-pulse': {
+          '0%, 100%': {
+            boxShadow: '0 0 0 0px hsl(var(--primary) / 0.4)',
+            transform: 'scale(1)',
+          },
+          '50%': {
+            boxShadow: '0 0 20px 10px hsl(var(--primary) / 0.1)',
+            transform: 'scale(1.05)',
+          },
+        },
+        'premium-float': {
+          '0%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+          '100%': { transform: 'translateY(0px) rotate(0deg)' },
+        },
+        'beam-sweep': {
+          '0%': { transform: 'rotate(0deg) scale(1.5)' },
+          '100%': { transform: 'rotate(360deg) scale(1.5)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -111,6 +134,10 @@ export default {
         'orbit-2': 'orbit-2 60s linear infinite',
         'pulse-glow': 'pulse-glow 4s infinite ease-in-out',
         'float-in': 'float-in 1s ease-out 1.5s forwards',
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+        'premium-pulse': 'premium-pulse 5s infinite ease-in-out',
+        'premium-float': 'premium-float 15s infinite ease-in-out',
+        'beam-sweep': 'beam-sweep 90s linear infinite',
       },
     },
   },
