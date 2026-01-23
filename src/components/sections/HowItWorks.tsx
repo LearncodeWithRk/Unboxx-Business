@@ -59,7 +59,9 @@ export function HowItWorks() {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-[56px] font-bold tracking-tight text-foreground">
-            One system. Every review. Every campus.
+            One system.
+            <br />
+            Every review. Every campus.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">
             Unboxx Business centralizes review monitoring, routing, response workflows, and reporting for universities with multiple campuses or departments. Your team responds faster, with consistency, and under governance controls that protect student privacy and brand voice.
