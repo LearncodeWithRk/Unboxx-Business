@@ -22,8 +22,8 @@ export default function ProductPage() {
         <AnalyzeSentiment />
         <EscalateAndResolve />
         <ReportToLeadership />
-        <FAQs />
         <ManagedServices />
+        <FAQs />
       </main>
       <Footer />
     </>
