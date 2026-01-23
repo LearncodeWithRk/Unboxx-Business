@@ -61,7 +61,7 @@ export function GetStarted() {
                     </svg>
                 </div>
                  <div className="absolute -left-20 sm:-left-32 -top-4 h-16 w-16 rounded-full bg-slate-800/50 backdrop-blur-sm flex items-center justify-center shadow-lg border border-slate-700">
-                    <MetaIcon className="h-8 w-8 text-blue-400"/>
+                    <MetaIcon className="h-8 w-8 text-primary"/>
                  </div>
                  <div className="absolute -right-20 sm:-right-32 top-0 h-16 w-16 rounded-full bg-slate-800/50 backdrop-blur-sm flex items-center justify-center shadow-lg border border-slate-700">
                     <ShopifyIcon className="h-8 w-8"/>
