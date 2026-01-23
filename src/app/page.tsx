@@ -3,6 +3,7 @@ import { FAQs } from '@/components/sections/FAQs';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
 import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction';
+import { GetStarted } from '@/components/sections/GetStarted';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
 import { HowItWorks } from '@/components/sections/HowItWorks';
@@ -20,6 +21,7 @@ export default function Home() {
       <FromFeedbackToAction />
       <KeyOutcomes />
       <FAQs />
+      <GetStarted />
       <FinalCTA />
       <Footer />
     </>
