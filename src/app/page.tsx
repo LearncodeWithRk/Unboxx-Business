@@ -1,5 +1,4 @@
 import { BuiltForUniversities } from '@/components/sections/BuiltForUniversities';
-import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
@@ -14,7 +13,6 @@ export default function Home() {
       <TheChallenge />
       <HowItWorks />
       <BuiltForUniversities />
-      <FinalCTA />
       <Footer />
     </>
   );
