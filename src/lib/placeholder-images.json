@@ -17,6 +17,42 @@
       "description": "Portrait of a young Indian woman.",
       "imageUrl": "https://images.unsplash.com/photo-1594395898393-010d1d3a0426?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjB3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTEwMTg5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "woman portrait"
+    },
+    {
+      "id": "how-it-works-dashboard",
+      "description": "A modern analytics dashboard UI for review management.",
+      "imageUrl": "https://images.unsplash.com/photo-1686061592689-312bbfb5c055?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MHx8fHwxNzY5MTI2ODI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dashboard analytics"
+    },
+    {
+      "id": "how-it-works-routing",
+      "description": "A diagram showing automated workflow routing.",
+      "imageUrl": "https://images.unsplash.com/photo-1753715613388-7e03410b1dce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b3JrZmxvdyUyMGRpYWdyYW18ZW58MHx8fHwxNzY5MTUzNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "workflow diagram"
+    },
+    {
+      "id": "how-it-works-approval",
+      "description": "A UI showing a response approval screen.",
+      "imageUrl": "https://picsum.photos/seed/approval/600/400",
+      "imageHint": "approval screen"
+    },
+    {
+      "id": "how-it-works-sentiment",
+      "description": "A chart displaying sentiment analysis data.",
+      "imageUrl": "https://images.unsplash.com/photo-1758812821349-1d2a4a96eecd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzZW50aW1lbnQlMjBjaGFydHxlbnwwfHx8fDE3NjkxNTM3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sentiment chart"
+    },
+    {
+      "id": "how-it-works-escalation",
+      "description": "A diagram of an issue escalation process.",
+      "imageUrl": "https://images.unsplash.com/photo-1743385779347-1549dabf1320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9jZXNzJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NjkxNTM3Mzd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "process diagram"
+    },
+    {
+      "id": "how-it-works-reporting",
+      "description": "An executive dashboard with key performance indicators.",
+      "imageUrl": "https://images.unsplash.com/photo-1768760819947-f6772ae3f433?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxleGVjdXRpdmUlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzY5MTUzNzM3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "executive dashboard"
     }
   ]
 }
