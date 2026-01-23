@@ -13,12 +13,19 @@ const navItems = [
   { name: 'Product', href: '/product', hasDropdown: false },
   { name: 'Solutions', href: '/solutions', hasDropdown: false },
   { name: 'Integrations', href: '/integrations', hasDropdown: false },
-  { name: 'Pricing', href: '#', hasDropdown: false },
+  { name: 'Pricing', href: '/pricing', hasDropdown: false },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, loading } = useAuth();
+
+  const handleSignOut = () => {
+    if (auth) {
+      auth.signOut();
+    }
+    setMobileMenuOpen(false);
+  }
 
   return (
     <header className="bg-background/95 sticky top-0 z-50 w-full border-b border-border/40 backdrop-blur">
@@ -109,7 +116,7 @@ export function Header() {
                ) : user ? (
                   <>
                     <p className="text-center text-sm font-medium">{user.displayName}</p>
-                    <Button variant="outline" className="w-full" onClick={() => { auth?.signOut(); setMobileMenuOpen(false); }}>Sign out</Button>
+                    <Button variant="outline" className="w-full" onClick={handleSignOut}>Sign out</Button>
                   </>
                ) : (
                   null
