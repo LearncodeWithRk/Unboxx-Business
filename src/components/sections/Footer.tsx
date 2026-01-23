@@ -3,10 +3,10 @@ import Link from 'next/link';
 const footerLinks = {
   product: [
     { name: 'Product', href: '/product' },
-    { name: 'How it works', href: '#' },
-    { name: 'Features', href: '#' },
+    { name: 'How it works', href: '/product' },
+    { name: 'Features', href: '/product' },
     { name: 'Integrations', href: '/integrations' },
-    { name: 'Security', href: '#' },
+    { name: 'Security', href: '/product#governance' },
   ],
   solutions: [
     { name: 'For Universities', href: '/solutions' },

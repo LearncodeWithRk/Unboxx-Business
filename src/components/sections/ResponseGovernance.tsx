@@ -11,6 +11,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
 
 export function ResponseGovernance() {
   const features = [
@@ -37,7 +38,7 @@ export function ResponseGovernance() {
   ];
 
   return (
-    <section className="bg-[#02040c] py-20 sm:py-28 lg:py-32">
+    <section id="governance" className="bg-[#02040c] py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
@@ -50,9 +51,11 @@ export function ResponseGovernance() {
             Your response is public. It represents your institution. Unboxx Business provides templates, approval workflows, and tone guidance so every response aligns with brand voice and privacy requirements. Draft, review, approve, publish—all tracked and auditable.
           </p>
           <div className="mt-2">
-            <Button variant="link" className="px-0 text-primary">
-                See governance features
-                <ArrowRight className="ml-2 h-4 w-4" />
+            <Button asChild variant="link" className="px-0 text-primary">
+                <Link href="/product#governance">
+                    See governance features
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
             </Button>
           </div>
         </div>

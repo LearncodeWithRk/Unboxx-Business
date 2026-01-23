@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import React from 'react';
+import Link from 'next/link';
 
 const features = [
   {
@@ -65,9 +66,11 @@ export function HowItWorks() {
             Unboxx Business centralizes review monitoring, routing, response workflows, and reporting for universities with multiple campuses or departments. Your team responds faster, with consistency, and under governance controls that protect student privacy and brand voice.
           </p>
           <div className="mt-8">
-            <Button variant="link" className="text-lg text-primary">
-              See the product
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" className="text-lg text-primary">
+              <Link href="/product">
+                See the product
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
