@@ -8,6 +8,7 @@ import { AnalyzeSentiment } from '@/components/sections/AnalyzeSentiment';
 import { EscalateAndResolve } from '@/components/sections/EscalateAndResolve';
 import { ReportToLeadership } from '@/components/sections/ReportToLeadership';
 import { ManagedServices } from '@/components/sections/ManagedServices';
+import { FAQs } from '@/components/sections/FAQs';
 
 export default function ProductPage() {
   return (
@@ -21,6 +22,7 @@ export default function ProductPage() {
         <AnalyzeSentiment />
         <EscalateAndResolve />
         <ReportToLeadership />
+        <FAQs />
         <ManagedServices />
       </main>
       <Footer />
