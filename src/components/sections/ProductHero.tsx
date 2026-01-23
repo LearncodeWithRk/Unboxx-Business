@@ -27,33 +27,37 @@ const UnboxxLogo = () => (
 const FloatingVisual = () => {
     return (
         <div className="relative w-full h-full flex items-center justify-center">
-            {/* Base */}
-            <div className="absolute bottom-[25%] w-56 h-4 rounded-[50%] bg-black/50 blur-xl" />
+            {/* Ambient shadow */}
+            <div className="absolute bottom-[25%] w-64 h-8 rounded-[50%] bg-black/50 blur-2xl" />
 
-            {/* Cylinder with overflow hidden to contain the glow */}
-            <div className="relative w-48 h-64 overflow-hidden">
-                {/* Cylinder Shape */}
-                <div className="absolute inset-0 bg-white/5 border-2 border-white/10 rounded-t-[100px] rounded-b-[20px]" />
-                
-                {/* Top ellipse to give 3D effect */}
-                <div className="absolute top-0 left-0 w-full h-8 bg-white/10 rounded-[50%] border-t-2 border-white/20" />
-
-                {/* Floating logo inside */}
-                <div 
-                    className="absolute inset-0 flex items-center justify-center animate-premium-float"
-                    style={{ animationDuration: '10s' }}
-                >
-                    <div 
-                        className="relative animate-pulse-glow"
-                        style={{ animationDuration: '6s' }}
-                    >
-                        <UnboxxLogo />
+            {/* Floating Capsule Container */}
+            <div 
+                className="relative w-56 h-80 animate-premium-float"
+                style={{ animationDuration: '12s' }}
+            >
+                {/* Glass Capsule Shape */}
+                <div className="relative w-full h-full rounded-[99px] border-2 border-white/10 bg-white/5 backdrop-blur-md overflow-hidden">
+                    
+                    {/* Internal Light Beams */}
+                    <div className="absolute top-0 left-1/4 w-1/2 h-full">
+                        <div className="absolute w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '0s'}}/>
+                        <div className="absolute left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '1.5s'}}/>
+                        <div className="absolute right-0 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-beam-scroll" style={{animationDelay: '0.5s'}}/>
                     </div>
-                </div>
+                    
+                    {/* Floating icon inside */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div 
+                            className="relative animate-pulse-glow"
+                            style={{ animationDuration: '5s' }}
+                        >
+                            <UnboxxLogo />
+                        </div>
+                    </div>
+                    
+                    {/* Reflection/Sheen */}
+                     <div className="absolute top-0 left-0 w-[150%] h-[150%] bg-gradient-to-br from-white/10 via-transparent to-transparent -translate-x-1/2 -translate-y-1/2 rotate-45" />
 
-                {/* Light Sweep Effect */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden rounded-t-[100px] rounded-b-[20px]">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[200%] bg-white/10 rotate-[25deg] animate-light-sweep" />
                 </div>
             </div>
         </div>
