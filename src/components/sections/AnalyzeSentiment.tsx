@@ -1,9 +1,88 @@
 'use client';
 
-import { BarChart, TrendingUp, Tags } from 'lucide-react';
+import { BarChart3, Smile, Tags, TrendingUp } from 'lucide-react';
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
+
+const features = [
+  {
+    icon: Smile,
+    title: 'Sentiment scoring across campuses and programs',
+    content: (
+      <div className="w-full space-y-2 pt-2">
+        <div className="flex items-center gap-2">
+          <span className="w-16 text-xs text-muted-foreground">Positive</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary">
+            <div className="h-2 w-[75%] rounded-full bg-primary"></div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-16 text-xs text-muted-foreground">Neutral</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary">
+            <div className="h-2 w-[15%] rounded-full bg-chart-4"></div>
+          </div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-16 text-xs text-muted-foreground">Negative</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary">
+            <div className="h-2 w-[10%] rounded-full bg-destructive"></div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    icon: Tags,
+    title: 'Theme extraction to identify recurring topics',
+    content: (
+      <div className="flex flex-wrap gap-2 pt-2">
+        <Badge variant="secondary">Faculty</Badge>
+        <Badge variant="secondary">Placements</Badge>
+        <Badge variant="secondary">Campus Life</Badge>
+        <Badge variant="secondary">Infrastructure</Badge>
+        <Badge variant="secondary">Coursework</Badge>
+      </div>
+    ),
+  },
+  {
+    icon: BarChart3,
+    title: 'Comparison views to benchmark performance',
+    content: (
+      <div className="w-full space-y-2 pt-2">
+        <div className="flex items-center gap-2">
+          <span className="w-12 text-xs text-muted-foreground">Mumbai</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary"><div className="h-2 w-[85%] rounded-full bg-primary"></div></div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-12 text-xs text-muted-foreground">Delhi</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary"><div className="h-2 w-[70%] rounded-full bg-primary/70"></div></div>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="w-12 text-xs text-muted-foreground">Pune</span>
+          <div className="h-2 flex-1 rounded-full bg-secondary"><div className="h-2 w-[78%] rounded-full bg-primary/80"></div></div>
+        </div>
+      </div>
+    ),
+  },
+  {
+    icon: TrendingUp,
+    title: 'Time-based trend analysis to track improvement',
+    content: (
+      <div className="flex h-full w-full items-end gap-1 pt-2">
+        <div className="h-[40%] w-full rounded-t-sm bg-primary/20"></div>
+        <div className="h-[60%] w-full rounded-t-sm bg-primary/40"></div>
+        <div className="h-[50%] w-full rounded-t-sm bg-primary/30"></div>
+        <div className="h-[75%] w-full rounded-t-sm bg-primary/60"></div>
+        <div className="h-[80%] w-full rounded-t-sm bg-primary/70"></div>
+        <div className="h-[65%] w-full rounded-t-sm bg-primary/50"></div>
+        <div className="h-[90%] w-full rounded-t-sm bg-primary/80"></div>
+      </div>
+    ),
+  },
+];
+
 
 export function AnalyzeSentiment() {
   return (
@@ -21,65 +100,28 @@ export function AnalyzeSentiment() {
           </p>
         </div>
 
-        <div className="relative grid grid-cols-2 grid-rows-2 gap-4">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="absolute -inset-16 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05),transparent_65%)]"></div>
             
-            <Card className="relative col-span-2 row-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border-border/20 bg-background/50 p-4 shadow-lg">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0 pb-2">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <Card
+                  key={feature.title}
+                  className="group relative flex flex-col justify-start overflow-hidden rounded-2xl border border-border/20 bg-background/50 p-4 shadow-lg"
+                >
+                  <CardHeader className="flex flex-row items-start justify-between space-y-0 p-0 pb-2 gap-2">
                     <CardTitle className="text-sm font-medium text-muted-foreground">
-                        Sentiment Over Time
+                      {feature.title}
                     </CardTitle>
-                    <TrendingUp className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent className="flex flex-grow items-end p-0">
-                    <div className="flex h-full w-full items-end gap-2">
-                        <div className="h-[40%] w-full rounded-t-sm bg-primary/20"></div>
-                        <div className="h-[60%] w-full rounded-t-sm bg-primary/40"></div>
-                        <div className="h-[50%] w-full rounded-t-sm bg-primary/30"></div>
-                        <div className="h-[75%] w-full rounded-t-sm bg-primary/60"></div>
-                        <div className="h-[80%] w-full rounded-t-sm bg-primary/70"></div>
-                        <div className="h-[65%] w-full rounded-t-sm bg-primary/50"></div>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="relative col-span-1 row-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border-border/20 bg-background/50 p-4 shadow-lg">
-                 <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0 pb-2">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">
-                        Theme Extraction
-                    </CardTitle>
-                    <Tags className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent className="flex flex-grow items-center p-0">
-                    <div className="flex flex-wrap gap-2">
-                        <Badge variant="secondary">Faculty</Badge>
-                        <Badge variant="secondary">Placements</Badge>
-                        <Badge variant="secondary">Campus</Badge>
-                        <Badge variant="secondary">Hostel</Badge>
-                    </div>
-                </CardContent>
-            </Card>
-
-            <Card className="relative col-span-1 row-span-1 flex flex-col justify-between overflow-hidden rounded-2xl border-border/20 bg-background/50 p-4 shadow-lg">
-                <CardHeader className="flex flex-row items-center justify-between space-y-0 p-0 pb-2">
-                    <CardTitle className="text-sm font-medium text-muted-foreground">
-                        Campus Comparison
-                    </CardTitle>
-                    <BarChart className="h-4 w-4 text-muted-foreground" />
-                </CardHeader>
-                <CardContent className="flex flex-grow items-center p-0">
-                     <div className="w-full space-y-2">
-                        <div className="flex items-center gap-2">
-                            <span className="w-12 text-xs text-muted-foreground">Mumbai</span>
-                            <div className="h-2 flex-1 rounded-full bg-secondary"><div className="h-2 w-[85%] rounded-full bg-primary"></div></div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <span className="w-12 text-xs text-muted-foreground">Delhi</span>
-                            <div className="h-2 flex-1 rounded-full bg-secondary"><div className="h-2 w-[70%] rounded-full bg-primary/70"></div></div>
-                        </div>
-                    </div>
-                </CardContent>
-            </Card>
+                    <Icon className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                  </CardHeader>
+                   <CardContent className="flex flex-grow items-center p-0">
+                    {feature.content}
+                   </CardContent>
+                </Card>
+              );
+            })}
         </div>
       </div>
     </section>
