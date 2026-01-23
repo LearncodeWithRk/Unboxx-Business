@@ -1,4 +1,7 @@
 import { BuiltForUniversities } from '@/components/sections/BuiltForUniversities';
+import { FAQs } from '@/components/sections/FAQs';
+import { FinalCTA } from '@/components/sections/FinalCTA';
+import { Footer } from '@/components/sections/Footer';
 import { FromFeedbackToAction } from '@/components/sections/FromFeedbackToAction';
 import { Header } from '@/components/sections/Header';
 import { Hero } from '@/components/sections/Hero';
@@ -16,6 +19,9 @@ export default function Home() {
       <BuiltForUniversities />
       <FromFeedbackToAction />
       <KeyOutcomes />
+      <FAQs />
+      <FinalCTA />
+      <Footer />
     </>
   );
 }
