@@ -58,7 +58,7 @@ export function HowItWorks() {
     <section className="bg-background py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-[56px] font-bold tracking-tight text-foreground">
+          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-foreground">
             One system. Every review. Every campus.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground">

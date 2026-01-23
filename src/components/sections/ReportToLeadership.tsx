@@ -31,7 +31,7 @@ return (
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-4 md:grid-cols-2">
         <div className="flex flex-col gap-8">
             <div>
-                <Badge variant="outline" className="border-primary/50 bg-primary/10 text-primary">
+                <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
                 Step 6: Report
                 </Badge>
                 <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -62,10 +62,10 @@ return (
             </div>
         </div>
 
-        <div className="relative grid grid-cols-2 gap-4">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="absolute -inset-16 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05),transparent_65%)]"></div>
             
-            <Card className="relative col-span-2 rounded-2xl border-border/20 bg-background/50 p-6 shadow-lg">
+            <Card className="relative sm:col-span-2 rounded-2xl border-border/20 bg-background/50 p-6 shadow-lg">
                 <CardHeader className="p-0 pb-2">
                     <CardTitle className="text-base font-medium text-muted-foreground">
                         Rating Trend

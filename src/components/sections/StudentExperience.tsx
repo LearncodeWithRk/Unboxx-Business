@@ -39,7 +39,7 @@ export function StudentExperience() {
         <div className="relative mt-16">
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.03),transparent_55%)]"></div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div className="rounded-2xl border border-border/20 bg-secondary/20 p-8 text-left shadow-lg">
+                <div className="rounded-2xl border border-border/20 bg-secondary/20 p-6 sm:p-8 text-left shadow-lg">
                     <h3 className="text-base font-semibold uppercase tracking-wider text-primary">Use cases</h3>
                     <ul className="mt-4 space-y-3">
                     {useCases.map((useCase, index) => (
@@ -50,7 +50,7 @@ export function StudentExperience() {
                     ))}
                     </ul>
                 </div>
-                <div className="rounded-2xl border border-border/20 bg-secondary/20 p-8 text-left shadow-lg">
+                <div className="rounded-2xl border border-border/20 bg-secondary/20 p-6 sm:p-8 text-left shadow-lg">
                     <h3 className="text-base font-semibold uppercase tracking-wider text-primary">Key capabilities</h3>
                     <ul className="mt-4 space-y-3">
                     {keyCapabilities.map((capability, index) => (

@@ -25,7 +25,7 @@ export function MultiCampusOperations() {
   return (
     <section className="bg-secondary/20 py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 px-4 md:grid-cols-2">
-        <div className="relative flex flex-col gap-10 rounded-2xl border border-border/20 bg-background/50 p-8 shadow-lg">
+        <div className="relative flex flex-col gap-10 rounded-2xl border border-border/20 bg-background/50 p-6 sm:p-8 shadow-lg">
            <div className="absolute -inset-16 -z-10 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.03),transparent_45%)]"></div>
           <div>
             <h3 className="text-base font-semibold uppercase tracking-wider text-primary">Use cases</h3>

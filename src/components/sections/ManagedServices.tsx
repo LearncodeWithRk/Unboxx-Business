@@ -26,7 +26,7 @@ export function ManagedServices() {
           </p>
         </div>
 
-        <div className="relative flex h-80 w-full items-center justify-center">
+        <div className="relative flex h-80 w-full items-center justify-center scale-75 sm:scale-100">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.05),transparent_65%)]"></div>
             
             <div className="relative flex">
