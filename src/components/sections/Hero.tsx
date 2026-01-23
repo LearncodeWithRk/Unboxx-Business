@@ -1,8 +1,5 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-
-const heroImage = PlaceHolderImages.find(p => p.id === 'hero-graphic');
+import { ReviewOrbitAnimation } from './ReviewOrbitAnimation';
 
 export function Hero() {
   return (
@@ -12,16 +9,14 @@ export function Hero() {
         <div className="grid grid-cols-1 items-center gap-12 py-16 md:grid-cols-2 lg:py-24">
           <div className="flex flex-col items-start gap-y-8">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Turn reviews into revenue
+              All Reviews. One Dashboard.
             </h1>
             <p className="max-w-2xl text-lg text-muted-foreground">
-              Monitor every review. Route to the right team. Respond with brand
-              consistency. Built for multi-campus institutions that take
-              reputation seriously.
+              Manage Google, CollegeDunia, Shiksha & more — from one place.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Book a demo</Button>
+              <Button size="lg">Book a demo</Button>
               <Button size="lg" variant="secondary">
                 See how it works
               </Button>
@@ -34,16 +29,7 @@ export function Hero() {
             </div>
           </div>
           <div className="relative flex h-full min-h-[400px] w-full items-center justify-center lg:min-h-[500px]">
-            {heroImage && (
-                 <Image
-                    src={heroImage.imageUrl}
-                    alt={heroImage.description}
-                    width={800}
-                    height={800}
-                    data-ai-hint={heroImage.imageHint}
-                    className="h-auto w-full max-w-lg object-contain"
-                />
-            )}
+            <ReviewOrbitAnimation />
           </div>
         </div>
       </div>
