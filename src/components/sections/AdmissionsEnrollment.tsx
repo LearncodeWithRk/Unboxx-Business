@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export function AdmissionsEnrollment() {
   const useCases = [
@@ -22,7 +23,7 @@ export function AdmissionsEnrollment() {
   ];
 
   return (
-    <section className="bg-secondary/20 py-20 sm:py-28 lg:py-32">
+    <section id="admissions-enrollment" className="bg-secondary/20 py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 px-4 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
@@ -35,9 +36,11 @@ export function AdmissionsEnrollment() {
             Prospective students read reviews before applying. Parents compare feedback across campuses. Unboxx Business helps admissions teams monitor what applicants see, respond with brand consistency, and surface insights that improve conversion from inquiry to enrollment.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              See how admissions teams use Unboxx Business
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/solutions#admissions-enrollment">
+                See how admissions teams use Unboxx Business
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

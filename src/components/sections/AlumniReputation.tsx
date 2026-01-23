@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export function AlumniReputation() {
   const useCases = [
@@ -22,7 +23,7 @@ export function AlumniReputation() {
   ];
 
   return (
-    <section className="bg-background py-20 sm:py-28 lg:py-32">
+    <section id="alumni-reputation" className="bg-background py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 px-4 md:grid-cols-2">
         <div className="flex flex-col gap-6">
           <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
@@ -35,9 +36,11 @@ export function AlumniReputation() {
             Your institution's reputation extends beyond current students. Alumni networks, donors, and industry partners all see public reviews. Unboxx Business helps communications and leadership teams monitor brand perception, respond strategically, and report reputation trends to governance bodies.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              See executive reporting features
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/solutions#alumni-reputation">
+                See executive reporting features
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

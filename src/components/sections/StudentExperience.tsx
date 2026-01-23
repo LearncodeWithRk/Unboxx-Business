@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export function StudentExperience() {
   const useCases = [
@@ -22,7 +23,7 @@ export function StudentExperience() {
   ];
 
   return (
-    <section className="bg-background py-20 sm:py-28 lg:py-32">
+    <section id="student-experience" className="bg-background py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto max-w-5xl px-4 text-center">
         <div className="flex flex-col items-center gap-6">
           <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
@@ -65,9 +66,11 @@ export function StudentExperience() {
         </div>
         
         <div className="mt-12">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              Book a demo for student experience teams
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/contact#book-a-demo">
+                Book a demo for student experience teams
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
         </div>
       </div>

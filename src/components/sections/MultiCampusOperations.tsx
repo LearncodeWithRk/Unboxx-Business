@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 export function MultiCampusOperations() {
   const useCases = [
@@ -23,7 +24,7 @@ export function MultiCampusOperations() {
   ];
 
   return (
-    <section className="bg-secondary/20 py-20 sm:py-28 lg:py-32">
+    <section id="multi-campus-operations" className="bg-secondary/20 py-20 sm:py-28 lg:py-32">
       <div className="container mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 px-4 md:grid-cols-2">
         <div className="relative flex flex-col gap-10 rounded-2xl border border-border/20 bg-background/50 p-6 sm:p-8 shadow-lg">
            <div className="absolute -inset-16 -z-10 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.03),transparent_45%)]"></div>
@@ -62,9 +63,11 @@ export function MultiCampusOperations() {
             Managing reviews for one campus is simple. Managing reviews for ten campuses across multiple countries requires governance. Unboxx Business provides role-based access, location-specific routing, approval workflows, and brand voice controls so every response meets institutional standards.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              Explore multi-campus governance
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/solutions#multi-campus-operations">
+                Explore multi-campus governance
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

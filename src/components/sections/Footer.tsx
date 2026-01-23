@@ -10,9 +10,9 @@ const footerLinks = {
   ],
   solutions: [
     { name: 'For Universities', href: '/solutions' },
-    { name: 'Admissions & Enrollment', href: '#' },
-    { name: 'Student Experience', href: '#' },
-    { name: 'Multi-campus Operations', href: '#' },
+    { name: 'Admissions & Enrollment', href: '/solutions#admissions-enrollment' },
+    { name: 'Student Experience', href: '/solutions#student-experience' },
+    { name: 'Multi-campus Operations', href: '/solutions#multi-campus-operations' },
   ],
   company: [
     { name: 'About', href: '/about' },

@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import React from 'react';
+import Link from 'next/link';
 
 const universityFeatures = [
   {
@@ -58,9 +59,11 @@ export function BuiltForUniversities() {
             regions, time zones, and compliance frameworks.
           </p>
           <div className="mt-8">
-            <Button variant="link" className="px-0 text-lg text-primary">
-              Explore solutions for universities
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" className="px-0 text-lg text-primary">
+              <Link href="/solutions">
+                Explore solutions for universities
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
