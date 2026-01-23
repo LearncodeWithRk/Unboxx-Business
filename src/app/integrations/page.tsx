@@ -5,6 +5,30 @@ import { ReviewPlatformIntegrations } from '@/components/sections/ReviewPlatform
 import { UniversitySystemIntegrations } from '@/components/sections/UniversitySystemIntegrations';
 import { ApiAndDataAccess } from '@/components/sections/ApiAndDataAccess';
 import { SecurityAndCompliance } from '@/components/sections/SecurityAndCompliance';
+import { FAQs } from '@/components/sections/FAQs';
+
+const integrationsFaqs = [
+  {
+    question: 'Do you integrate with all review platforms?',
+    answer: 'We integrate with Google Business Profile, Facebook, and leading education review sites. We add new sources based on client needs and API availability.',
+  },
+  {
+    question: 'Can we connect Unboxx Business to our existing CRM?',
+    answer: 'Yes. We support integration with common university CRM systems to provide context about reviewers and trigger follow-up workflows.',
+  },
+  {
+    question: 'How long does integration setup take?',
+    answer: 'Most integrations are configured during onboarding (2–4 weeks). Complex or custom integrations may require additional time.',
+  },
+  {
+    question: 'Can we export review data for our own analysis?',
+    answer: 'Yes. You can export data via the platform UI or use our API for programmatic access.',
+  },
+  {
+    question: 'What if a review platform doesn\'t have an API?',
+    answer: 'We work with you to find alternative solutions, including manual monitoring support where APIs aren\'t available.',
+  },
+];
 
 export default function IntegrationsPage() {
   return (
@@ -16,6 +40,7 @@ export default function IntegrationsPage() {
         <UniversitySystemIntegrations />
         <ApiAndDataAccess />
         <SecurityAndCompliance />
+        <FAQs faqs={integrationsFaqs} />
       </main>
       <Footer />
     </>

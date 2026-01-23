@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
 
 type FAQ = {
   question: string;
@@ -49,8 +50,10 @@ export function FAQs({ faqs = defaultFaqs }: FAQsProps) {
     <section className="bg-background py-16 sm:py-24 lg:py-32">
       <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="font-semibold text-primary">FAQs</p>
-          <h2 className="mt-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+          <Badge variant="outline" className="w-fit border-primary/50 bg-primary/10 text-primary">
+            FAQs
+          </Badge>
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             Questions? We got answers.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
