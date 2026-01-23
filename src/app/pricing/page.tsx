@@ -1,6 +1,7 @@
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { PricingHero } from '@/components/sections/PricingHero';
+import { PricingTiers } from '@/components/sections/PricingTiers';
 
 export default function PricingPage() {
   return (
@@ -8,9 +9,7 @@ export default function PricingPage() {
       <Header />
       <main>
         <PricingHero />
-        <div className="container mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            {/* You can start adding your pricing components here. */}
-        </div>
+        <PricingTiers />
       </main>
       <Footer />
     </>
