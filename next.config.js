@@ -1,4 +1,4 @@
-import type {NextConfig} from 'next';
+/** @type {import('next').NextConfig} */
 
 const securityHeaders = [
   {
@@ -31,7 +31,7 @@ const securityHeaders = [
   },
 ];
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   /* config options here */
   typescript: {
     ignoreBuildErrors: true,
@@ -77,4 +77,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
