@@ -1,5 +1,3 @@
-/** @type {import('next').NextConfig} */
-
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -31,6 +29,7 @@ const securityHeaders = [
   },
 ];
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
   typescript: {
