@@ -8,6 +8,7 @@ import { useAuth } from '@/hooks/use-auth';
 import { UserNav } from '@/components/auth/UserNav';
 import { Skeleton } from '../ui/skeleton';
 import { auth } from '@/lib/firebase';
+import Image from 'next/image';
 
 const navItems = [
   { name: 'Product', href: '/product', hasDropdown: false },
@@ -32,23 +33,13 @@ export function Header() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2">
-            <svg
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <Image
+              src="https://res.cloudinary.com/learncodewithrk/image/upload/v1769267304/Unboxxbusiness/logo_icon_nozlld.png"
+              alt="Unboxx Business Logo"
+              width={32}
+              height={32}
               className="rounded-md"
-            >
-              <rect width="32" height="32" rx="8" className="fill-primary" />
-              <path
-                d="M8 18L12 14L16 18L20 14L24 18"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            />
             <span className="hidden text-lg font-bold text-foreground sm:inline-block">
               Unboxx Business
             </span>

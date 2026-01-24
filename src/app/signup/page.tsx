@@ -17,6 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Sign Up',
@@ -92,23 +93,13 @@ export default function SignUpPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
            <Link href="/" className="flex items-center gap-2 justify-center mb-4">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+              <Image
+                src="https://res.cloudinary.com/learncodewithrk/image/upload/v1769267304/Unboxxbusiness/logo_icon_nozlld.png"
+                alt="Unboxx Business Logo"
+                width={32}
+                height={32}
                 className="rounded-md"
-              >
-                <rect width="32" height="32" rx="8" className="fill-primary" />
-                <path
-                  d="M8 18L12 14L16 18L20 14L24 18"
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              />
               <span className="text-lg font-bold text-foreground">
                 Unboxx Business
               </span>

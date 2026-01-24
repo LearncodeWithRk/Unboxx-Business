@@ -5,26 +5,7 @@ import { Check, Globe } from 'lucide-react';
 import React from 'react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-
-// Re-using the same SVG logo from Header/Footer
-const UnboxxLogo = () => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect width="32" height="32" rx="8" fill="hsl(var(--primary))" />
-    <path
-      d="M8 18L12 14L16 18L20 14L24 18"
-      stroke="hsl(var(--primary-foreground))"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
+import Image from 'next/image';
 
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +58,13 @@ export function PremiumCTA() {
         {/* Central Logo */}
         <div className="mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="relative rounded-full p-2 animate-premium-pulse">
-             <UnboxxLogo />
+             <Image
+                src="https://res.cloudinary.com/learncodewithrk/image/upload/v1769267304/Unboxxbusiness/logo_icon_nozlld.png"
+                alt="Unboxx Business Logo"
+                width={48}
+                height={48}
+                className="rounded-md"
+              />
           </div>
         </div>
 
