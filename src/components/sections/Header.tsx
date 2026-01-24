@@ -61,13 +61,7 @@ export function Header() {
 
         <div className="flex items-center gap-2">
            <div className="hidden items-center gap-2 md:flex">
-             {loading ? (
-                <Skeleton className="h-10 w-24" />
-             ) : user ? (
-                <UserNav />
-             ) : (
-                null
-             )}
+             {!loading && user ? <UserNav /> : null}
              <Button asChild>
               <Link href="/contact#book-a-demo">Book a demo</Link>
              </Button>
@@ -104,16 +98,12 @@ export function Header() {
               ))}
             </nav>
             <div className="flex flex-col gap-2 border-t border-border pt-4">
-               {loading ? (
-                  <Skeleton className="h-10 w-full" />
-               ) : user ? (
+               {!loading && user ? (
                   <>
                     <p className="text-center text-sm font-medium">{user.displayName}</p>
                     <Button variant="outline" className="w-full" onClick={handleSignOut}>Sign out</Button>
                   </>
-               ) : (
-                  null
-               )}
+               ) : null}
                <Button className="w-full" asChild>
                 <Link href="/contact#book-a-demo" onClick={() => setMobileMenuOpen(false)}>Book a demo</Link>
                </Button>
