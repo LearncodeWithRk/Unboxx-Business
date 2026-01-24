@@ -1,8 +1,10 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { ContactHero } from '@/components/sections/ContactHero';
 import { ContactFormAndDetails } from '@/components/sections/ContactFormAndDetails';
 import { FAQs } from '@/components/sections/FAQs';
+import { Schema } from '@/components/SEO/Schema';
 
 const contactFaqs = [
   {
@@ -31,9 +33,31 @@ const contactFaqs = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: 'Contact Us | Book a Demo with Unboxx Business',
+  description:
+    'Get in touch with the Unboxx Business team. Book a personalized demo to see how our review management platform can help your university.',
+  alternates: {
+    canonical: '/contact',
+  },
+};
+
 export default function ContactPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: contactFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
   return (
     <>
+      <Schema data={faqSchema} />
       <Header />
       <main>
         <ContactHero />

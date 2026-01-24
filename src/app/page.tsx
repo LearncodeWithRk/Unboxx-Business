@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { BuiltForUniversities } from '@/components/sections/BuiltForUniversities';
 import { FAQs } from '@/components/sections/FAQs';
 import { Footer } from '@/components/sections/Footer';
@@ -8,10 +9,37 @@ import { HowItWorks } from '@/components/sections/HowItWorks';
 import { TheChallenge } from '@/components/sections/TheChallenge';
 import { PremiumCTA } from '@/components/sections/PremiumCTA';
 import { SocialProof } from '@/components/sections/SocialProof';
+import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
+
+export const metadata: Metadata = {
+  title: 'Unboxx Business | Turn Reviews Into Revenue',
+  description:
+    'Monitor every review, route to the right team, and respond with brand consistency. Unboxx Business is the leading review management platform for multi-campus universities.',
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Unboxx Business',
+    url: siteConfig.url,
+    logo: siteConfig.ogImage,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+91-000-000-0000',
+      contactType: 'Customer Service',
+      email: 'hello@unboxxbusiness.com',
+    },
+    sameAs: [siteConfig.links.twitter],
+  };
+
   return (
     <>
+      <Schema data={organizationSchema} />
       <Header />
       <Hero />
       <TheChallenge />

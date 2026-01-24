@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { AboutHero } from '@/components/sections/AboutHero';
@@ -5,6 +6,7 @@ import { OurMission } from '@/components/sections/OurMission';
 import { OurValues } from '@/components/sections/OurValues';
 import { FooterCTA } from '@/components/sections/FooterCTA';
 import { FAQs } from '@/components/sections/FAQs';
+import { Schema } from '@/components/SEO/Schema';
 
 const aboutFaqs = [
   {
@@ -34,9 +36,32 @@ const aboutFaqs = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: 'About Unboxx Business | Built for Universities',
+  description:
+    'Learn about Unboxx Business, our mission, values, and why we are dedicated to helping universities manage their reputation and improve student experience.',
+  alternates: {
+    canonical: '/about',
+  },
+};
+
 export default function AboutPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: aboutFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <Schema data={faqSchema} />
       <Header />
       <main>
         <AboutHero />

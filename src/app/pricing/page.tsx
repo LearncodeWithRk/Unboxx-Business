@@ -1,9 +1,11 @@
+import type { Metadata } from 'next';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { PricingHero } from '@/components/sections/PricingHero';
 import { PricingTiers } from '@/components/sections/PricingTiers';
 import { ProcurementFriendly } from '@/components/sections/ProcurementFriendly';
 import { FAQs } from '@/components/sections/FAQs';
+import { Schema } from '@/components/SEO/Schema';
 
 const pricingFaqs = [
   {
@@ -18,8 +20,7 @@ const pricingFaqs = [
   },
   {
     question: 'Do you offer discounts for annual contracts?',
-    answer:
-      'Yes. We offer discounted rates for annual and multi-year commitments.',
+    answer: 'Yes. We offer discounted rates for annual and multi-year commitments.',
   },
   {
     question: 'What payment methods do you accept?',
@@ -38,14 +39,35 @@ const pricingFaqs = [
   },
   {
     question: 'Do you offer non-profit or educational discounts?',
-    answer:
-      'Our pricing is designed for educational institutions. Contact us to discuss your specific needs.',
+    answer: 'Our pricing is designed for educational institutions. Contact us to discuss your specific needs.',
   },
 ];
 
+export const metadata: Metadata = {
+  title: 'Pricing | Unboxx Business',
+  description:
+    'Explore pricing plans for Unboxx Business. We offer flexible, procurement-friendly pricing that scales with your university, from single campuses to global institutions.',
+  alternates: {
+    canonical: '/pricing',
+  },
+};
+
 export default function PricingPage() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: pricingFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
   return (
     <>
+      <Schema data={faqSchema} />
       <Header />
       <main>
         <PricingHero />
