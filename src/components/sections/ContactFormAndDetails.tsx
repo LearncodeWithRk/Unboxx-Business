@@ -108,7 +108,7 @@ export function ContactFormAndDetails() {
             <div className="mt-6 space-y-4">
                 <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary"/>
-                    <a href="mailto:hello@unboxxbusiness.com" className="font-medium text-foreground hover:text-primary">hello@unboxxbusiness.com</a>
+                    <a href="mailto:hello@unboxxbusiness.live" className="font-medium text-foreground hover:text-primary">hello@unboxxbusiness.live</a>
                 </div>
                  <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-primary"/>

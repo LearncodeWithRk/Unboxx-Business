@@ -53,10 +53,10 @@ export function ContactHero() {
               asChild
               className="transition-all duration-300 hover:shadow-primary/50 hover:shadow-lg hover:scale-105"
             >
-              <Link href="#book-a-demo">Book a demo</Link>
+              <Link href="/contact#book-a-demo">Book a demo</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="mailto:hello@unboxxbusiness.com">Email us instead</Link>
+              <Link href="mailto:hello@unboxxbusiness.live">Email us instead</Link>
             </Button>
           </div>
 

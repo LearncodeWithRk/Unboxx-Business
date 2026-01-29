@@ -42,7 +42,7 @@ export default function Home() {
       '@type': 'ContactPoint',
       telephone: '+91-000-000-0000',
       contactType: 'Customer Service',
-      email: 'hello@unboxxbusiness.com',
+      email: 'hello@unboxxbusiness.live',
     },
     sameAs: [siteConfig.links.twitter],
   };

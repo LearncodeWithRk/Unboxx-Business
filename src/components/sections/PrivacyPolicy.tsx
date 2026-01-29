@@ -90,7 +90,7 @@ export function PrivacyPolicy() {
                     <li>Withdraw consent where processing is based on consent</li>
                     <li>Lodge a complaint with a supervisory authority</li>
                 </ul>
-                <p>To exercise these rights, contact us at <a href="mailto:privacy@unboxxbusiness.com" className="text-primary hover:underline">privacy@unboxxbusiness.com</a>.</p>
+                <p>To exercise these rights, contact us at <a href="mailto:privacy@unboxxbusiness.live" className="text-primary hover:underline">privacy@unboxxbusiness.live</a>.</p>
             </div>
 
             <div className="space-y-4">
@@ -122,7 +122,7 @@ export function PrivacyPolicy() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-semibold text-foreground">11. Contact Us</h2>
                 <p>For privacy questions or to exercise your rights:</p>
-                <p><strong>Email:</strong> <a href="mailto:privacy@unboxxbusiness.com" className="text-primary hover:underline">privacy@unboxxbusiness.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:privacy@unboxxbusiness.live" className="text-primary hover:underline">privacy@unboxxbusiness.live</a></p>
                 <p><strong>Address:</strong> Available upon request</p>
             </div>
 

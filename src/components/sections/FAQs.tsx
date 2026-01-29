@@ -58,8 +58,8 @@ export function FAQs({ faqs = defaultFaqs }: FAQsProps) {
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Do you have more questions? Contact our support team at{' '}
-            <a href="mailto:support@unboxx.com" className="text-primary hover:underline">
-              support@unboxx.com
+            <a href="mailto:support@unboxxbusiness.live" className="text-primary hover:underline">
+              support@unboxxbusiness.live
             </a>
           </p>
         </div>

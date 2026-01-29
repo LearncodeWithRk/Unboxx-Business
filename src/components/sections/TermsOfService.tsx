@@ -159,7 +159,7 @@ export function TermsOfService() {
             <div className="space-y-4">
                 <h2 className="text-2xl font-semibold text-foreground">16. Contact</h2>
                 <p>For questions about these Terms:</p>
-                <p><strong>Email:</strong> <a href="mailto:legal@unboxxbusiness.com" className="text-primary hover:underline">legal@unboxxbusiness.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:legal@unboxxbusiness.live" className="text-primary hover:underline">legal@unboxxbusiness.live</a></p>
             </div>
         </div>
       </div>
