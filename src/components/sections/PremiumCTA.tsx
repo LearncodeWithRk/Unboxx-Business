@@ -59,7 +59,7 @@ export function PremiumCTA() {
         <div className="mb-8 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="relative rounded-full p-2 animate-premium-pulse">
              <Image
-                src="https://res.cloudinary.com/learncodewithrk/image/upload/v1769267304/Unboxxbusiness/logo_icon_nozlld.png"
+                src="https://res.cloudinary.com/dhrigocvd/image/upload/v1769703493/android-chrome-192x192_k8ouzu.png"
                 alt="Unboxx Business Logo"
                 width={48}
                 height={48}

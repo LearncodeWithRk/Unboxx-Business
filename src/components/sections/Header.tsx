@@ -34,7 +34,7 @@ export function Header() {
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="https://res.cloudinary.com/learncodewithrk/image/upload/v1769267304/Unboxxbusiness/logo_icon_nozlld.png"
+              src="https://res.cloudinary.com/dhrigocvd/image/upload/v1769703493/android-chrome-192x192_k8ouzu.png"
               alt="Unboxx Business Logo"
               width={32}
               height={32}
