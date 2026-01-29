@@ -17,6 +17,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Check, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
+import { useToast } from '@/hooks/use-toast';
 
 const formSchema = z.object({
   fullName: z.string().min(1, 'Full name is required'),
@@ -25,7 +26,14 @@ const formSchema = z.object({
   message: z.string().optional(),
 });
 
+const encode = (data: { [key: string]: any }) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 export function ContactFormAndDetails() {
+  const { toast } = useToast();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,8 +45,25 @@ export function ContactFormAndDetails() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Here you would typically send the form data to your backend
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...values }),
+    })
+      .then(() => {
+        toast({
+          title: 'Form submitted!',
+          description: 'Thanks for reaching out. We will get back to you shortly.',
+        });
+        form.reset();
+      })
+      .catch((error) => {
+        toast({
+          variant: 'destructive',
+          title: 'Uh oh! Something went wrong.',
+          description: 'There was a problem submitting your form. Please try again.',
+        });
+      });
   }
 
   return (
@@ -104,7 +129,13 @@ export function ContactFormAndDetails() {
           </CardHeader>
           <CardContent>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form 
+                name="contact"
+                data-netlify="true"
+                onSubmit={form.handleSubmit(onSubmit)} 
+                className="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
                 <FormField
                     control={form.control}
                     name="fullName"
