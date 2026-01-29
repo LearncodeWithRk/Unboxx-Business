@@ -12,6 +12,7 @@ import { ManagedServices } from '@/components/sections/ManagedServices';
 import { FAQs } from '@/components/sections/FAQs';
 import { PremiumCTA } from '@/components/sections/PremiumCTA';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const productFaqs = [
   {
@@ -40,14 +41,24 @@ const productFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Product Features | Unboxx Business',
-  description:
-    'Discover the features of Unboxx Business, from real-time monitoring and automated routing to response governance and executive reporting.',
-  alternates: {
-    canonical: '/product',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Product Features | Unboxx Business';
+  const description =
+    'Discover the features of Unboxx Business, from real-time monitoring and automated routing to response governance and executive reporting.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/product',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/product`,
+    },
+  };
+}
 
 export default function ProductPage() {
   const faqSchema = {

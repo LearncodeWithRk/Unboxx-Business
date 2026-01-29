@@ -7,6 +7,7 @@ import { OurValues } from '@/components/sections/OurValues';
 import { FooterCTA } from '@/components/sections/FooterCTA';
 import { FAQs } from '@/components/sections/FAQs';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const aboutFaqs = [
   {
@@ -36,14 +37,24 @@ const aboutFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'About Unboxx Business | Built for Universities',
-  description:
-    'Learn about Unboxx Business, our mission, values, and why we are dedicated to helping universities manage their reputation and improve student experience.',
-  alternates: {
-    canonical: '/about',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'About Unboxx Business | Built for Universities';
+  const description =
+    'Learn about Unboxx Business, our mission, values, and why we are dedicated to helping universities manage their reputation and improve student experience.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/about',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/about`,
+    },
+  };
+}
 
 export default function AboutPage() {
   const faqSchema = {

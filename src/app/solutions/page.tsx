@@ -9,6 +9,7 @@ import { MultiCampusOperations } from '@/components/sections/MultiCampusOperatio
 import { AlumniReputation } from '@/components/sections/AlumniReputation';
 import { FAQs } from '@/components/sections/FAQs';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const solutionsFaqs = [
   {
@@ -36,14 +37,24 @@ const solutionsFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Solutions for Universities | Unboxx Business',
-  description:
-    'Explore solutions for admissions, student experience, and multi-campus operations. Unboxx Business helps universities turn feedback into a growth engine.',
-  alternates: {
-    canonical: '/solutions',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Solutions for Universities | Unboxx Business';
+  const description =
+    'Explore solutions for admissions, student experience, and multi-campus operations. Unboxx Business helps universities turn feedback into a growth engine.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/solutions',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/solutions`,
+    },
+  };
+}
 
 export default function SolutionsPage() {
   const faqSchema = {

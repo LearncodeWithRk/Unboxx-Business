@@ -5,6 +5,7 @@ import { ContactHero } from '@/components/sections/ContactHero';
 import { ContactFormAndDetails } from '@/components/sections/ContactFormAndDetails';
 import { FAQs } from '@/components/sections/FAQs';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const contactFaqs = [
   {
@@ -33,14 +34,24 @@ const contactFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Contact Us | Book a Demo with Unboxx Business',
-  description:
-    'Get in touch with the Unboxx Business team. Book a personalized demo to see how our review management platform can help your university.',
-  alternates: {
-    canonical: '/contact',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Contact Us | Book a Demo with Unboxx Business';
+  const description =
+    'Get in touch with the Unboxx Business team. Book a personalized demo to see how our review management platform can help your university.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/contact',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/contact`,
+    },
+  };
+}
 
 export default function ContactPage() {
   const faqSchema = {

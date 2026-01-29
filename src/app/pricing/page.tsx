@@ -6,6 +6,7 @@ import { PricingTiers } from '@/components/sections/PricingTiers';
 import { ProcurementFriendly } from '@/components/sections/ProcurementFriendly';
 import { FAQs } from '@/components/sections/FAQs';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const pricingFaqs = [
   {
@@ -43,14 +44,24 @@ const pricingFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Pricing | Unboxx Business',
-  description:
-    'Explore pricing plans for Unboxx Business. We offer flexible, procurement-friendly pricing that scales with your university, from single campuses to global institutions.',
-  alternates: {
-    canonical: '/pricing',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Pricing | Unboxx Business';
+  const description =
+    'Explore pricing plans for Unboxx Business. We offer flexible, procurement-friendly pricing that scales with your university, from single campuses to global institutions.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/pricing',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/pricing`,
+    },
+  };
+}
 
 export default function PricingPage() {
   const faqSchema = {

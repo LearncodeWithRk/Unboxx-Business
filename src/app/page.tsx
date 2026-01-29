@@ -12,14 +12,24 @@ import { SocialProof } from '@/components/sections/SocialProof';
 import { Schema } from '@/components/SEO/Schema';
 import { siteConfig } from '@/config/site';
 
-export const metadata: Metadata = {
-  title: 'Unboxx Business | Turn Reviews Into Revenue',
-  description:
-    'Monitor every review, route to the right team, and respond with brand consistency. Unboxx Business is the leading review management platform for multi-campus universities.',
-  alternates: {
-    canonical: '/',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Unboxx Business | Turn Reviews Into Revenue';
+  const description =
+    'Monitor every review, route to the right team, and respond with brand consistency. Unboxx Business is the leading review management platform for multi-campus universities.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/',
+    },
+    openGraph: {
+      title,
+      description,
+      url: siteConfig.url,
+    },
+  };
+}
 
 export default function Home() {
   const organizationSchema = {

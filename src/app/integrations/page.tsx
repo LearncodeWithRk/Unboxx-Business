@@ -8,6 +8,7 @@ import { ApiAndDataAccess } from '@/components/sections/ApiAndDataAccess';
 import { SecurityAndCompliance } from '@/components/sections/SecurityAndCompliance';
 import { FAQs } from '@/components/sections/FAQs';
 import { Schema } from '@/components/SEO/Schema';
+import { siteConfig } from '@/config/site';
 
 const integrationsFaqs = [
   {
@@ -36,14 +37,24 @@ const integrationsFaqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: 'Integrations | Unboxx Business',
-  description:
-    'Unboxx Business integrates with review platforms like Google and Facebook, as well as your existing university CRM and SIS systems for seamless workflow.',
-  alternates: {
-    canonical: '/integrations',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Integrations | Unboxx Business';
+  const description =
+    'Unboxx Business integrates with review platforms like Google and Facebook, as well as your existing university CRM and SIS systems for seamless workflow.';
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: '/integrations',
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteConfig.url}/integrations`,
+    },
+  };
+}
 
 export default function IntegrationsPage() {
   const faqSchema = {
