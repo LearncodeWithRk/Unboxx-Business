@@ -13,48 +13,26 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Check, Mail, Phone, CalendarIcon } from 'lucide-react';
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
-import { Calendar } from '@/components/ui/calendar';
-import { cn } from '@/lib/utils';
-import { format } from 'date-fns';
+import { Check, Mail, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 const formSchema = z.object({
-  firstName: z.string().min(1, 'First name is required'),
-  lastName: z.string().min(1, 'Last name is required'),
+  fullName: z.string().min(1, 'Full name is required'),
   email: z.string().email('Invalid email address'),
   universityName: z.string().min(1, 'University name is required'),
-  jobTitle: z.string().min(1, 'Job title is required'),
-  campusCount: z.string().min(1, 'Number of campuses is required'),
-  phone: z.string().optional(),
-  demoDate: z.date().optional(),
-  howDidYouHear: z.string().optional(),
-  anythingElse: z.string().optional(),
+  message: z.string().optional(),
 });
 
 export function ContactFormAndDetails() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       email: '',
       universityName: '',
-      jobTitle: '',
-      campusCount: '',
-      phone: '',
-      howDidYouHear: '',
-      anythingElse: '',
+      message: '',
     },
   });
 
@@ -127,34 +105,19 @@ export function ContactFormAndDetails() {
           <CardContent>
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                  <FormField
+                <FormField
                     control={form.control}
-                    name="firstName"
+                    name="fullName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>First name*</FormLabel>
+                        <FormLabel>Full name*</FormLabel>
                         <FormControl>
-                          <Input placeholder="Priya" {...field} />
+                          <Input placeholder="Priya Sharma" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last name*</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Sharma" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
                 <FormField
                   control={form.control}
@@ -184,122 +147,12 @@ export function ContactFormAndDetails() {
                   )}
                 />
 
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-                    <FormField
-                      control={form.control}
-                      name="jobTitle"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Job title / Department*</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Admissions Director" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    <FormField
-                      control={form.control}
-                      name="campusCount"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Number of campuses*</FormLabel>
-                          <FormControl>
-                            <Input type="number" placeholder="3" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                </div>
-
-                 <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Phone number (optional)</FormLabel>
-                      <FormControl>
-                        <Input type="tel" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                 <FormField
-                  control={form.control}
-                  name="demoDate"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-col">
-                      <FormLabel>Preferred demo date/time (optional)</FormLabel>
-                       <Popover>
-                        <PopoverTrigger asChild>
-                          <FormControl>
-                            <Button
-                              variant={"outline"}
-                              className={cn(
-                                "w-full justify-start text-left font-normal",
-                                !field.value && "text-muted-foreground"
-                              )}
-                            >
-                              <CalendarIcon className="mr-2 h-4 w-4" />
-                              {field.value ? (
-                                format(field.value, "PPP")
-                              ) : (
-                                <span>Pick a date</span>
-                              )}
-                            </Button>
-                          </FormControl>
-                        </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0" align="start">
-                          <Calendar
-                            mode="single"
-                            selected={field.value}
-                            onSelect={field.onChange}
-                            disabled={(date) =>
-                              date < new Date(new Date().setHours(0,0,0,0))
-                            }
-                            initialFocus
-                          />
-                        </PopoverContent>
-                      </Popover>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
                 <FormField
                   control={form.control}
-                  name="howDidYouHear"
+                  name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>How did you hear about us? (optional)</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select an option" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="search">Search Engine (Google, etc.)</SelectItem>
-                          <SelectItem value="social">Social Media</SelectItem>
-                          <SelectItem value="conference">Conference/Event</SelectItem>
-                          <SelectItem value="referral">Referral</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="anythingElse"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Anything we should know before the demo? (optional)</FormLabel>
+                      <FormLabel>Please share anything that will help us prepare for our meeting. (optional)</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="e.g., We are particularly interested in multi-campus governance features."
