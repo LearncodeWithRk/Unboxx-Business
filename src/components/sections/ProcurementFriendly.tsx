@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
 
 const offerings = [
   'Annual or multi-year contract options',
@@ -29,9 +30,11 @@ export function ProcurementFriendly() {
             We understand institutional procurement. Unboxx Business works within your purchasing timelines, offers flexible contract terms, and provides documentation your procurement team needs.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              Contact our sales team
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/contact">
+                Contact our sales team
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

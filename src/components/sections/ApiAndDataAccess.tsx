@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Check, Code } from 'lucide-react';
+import Link from 'next/link';
 
 const apiCapabilities = [
   'Retrieve review data, sentiment scores, and metadata',
@@ -41,9 +42,11 @@ export function ApiAndDataAccess() {
               ))}
             </ul>
           </div>
-          <Button>
+          <Button asChild>
+            <Link href="/contact">
               <Code className="mr-2 h-4 w-4" />
-              View API Documentation
+              Request API Documentation
+            </Link>
           </Button>
         </div>
       </div>

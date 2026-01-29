@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const pricingTiers = [
   {
@@ -125,12 +126,15 @@ export function PricingTiers() {
                 </CardContent>
                 <CardFooter className="mt-8">
                   <Button
+                    asChild
                     size="lg"
                     className="w-full"
                     variant={tier.recommended ? 'secondary' : 'default'}
                   >
-                    {tier.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link href="/contact#book-a-demo">
+                      {tier.cta}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </CardFooter>
               </Card>

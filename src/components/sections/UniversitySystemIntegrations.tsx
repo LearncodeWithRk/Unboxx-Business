@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check } from 'lucide-react';
+import Link from 'next/link';
 
 const integrationCapabilities = [
     'CRM integration for applicant and student context',
@@ -49,9 +50,11 @@ export function UniversitySystemIntegrations() {
             Unboxx Business can integrate with your CRM, student information system, helpdesk, or communication tools to provide context, streamline workflows, and trigger follow-up actions. We support common university technology stacks with flexible integration options.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              Discuss your integration needs
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/contact">
+                Discuss your integration needs
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

@@ -4,6 +4,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
 
 const securityMeasures = [
   'Encrypted API connections (TLS 1.2+)',
@@ -28,9 +29,11 @@ export function SecurityAndCompliance() {
             Every integration follows security best practices—encrypted data transmission, minimal permission scopes, audit logging, and compliance-aware data handling. We never store more data than necessary and support your governance requirements.
           </p>
            <div className="mt-4">
-            <Button variant="link" size="lg" className="text-primary px-0">
-              Review our security practices
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild variant="link" size="lg" className="text-primary px-0">
+              <Link href="/contact">
+                Contact us for security details
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>

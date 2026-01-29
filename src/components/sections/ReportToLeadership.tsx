@@ -5,6 +5,7 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
 
 const reportFeatures = [
     {
@@ -55,9 +56,11 @@ return (
                 })}
             </div>
              <div className="mt-4">
-                <Button variant="link" size="lg" className="text-primary px-0">
-                    Book a demo to see reporting
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                <Button asChild variant="link" size="lg" className="text-primary px-0">
+                    <Link href="/contact#book-a-demo">
+                        Book a demo to see reporting
+                        <ArrowRight className="ml-2 h-5 w-5" />
+                    </Link>
                 </Button>
             </div>
         </div>
