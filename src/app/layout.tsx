@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     creator: '@UnboxxBusiness',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: 'https://res.cloudinary.com/dhrigocvd/image/upload/v1769703492/favicon_uilevs.ico',
   },
 };
 
