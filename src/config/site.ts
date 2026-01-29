@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: 'Unboxx Business',
   url: 'https://www.unboxxbusiness.com',
-  ogImage: 'https://storage.googleapis.com/aifirebase-799b3.appspot.com/refold/black-hole.png',
+  ogImage: 'https://res.cloudinary.com/dhrigocvd/image/upload/v1769703493/android-chrome-192x192_k8ouzu.png',
   description:
     'Turn reviews into revenue. Monitor every review, route to the right team, and respond with brand consistency. Built for multi-campus institutions.',
   links: {
